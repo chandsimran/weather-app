@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Fiji Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,35 +12,39 @@
 
     <script>
         function searchWeather() {
-            alert("Searching weather for your city...");
+            alert("Searching weather for your location...");
         }
     </script>
 
     <header>
-        <h1>🌤 Weather App</h1>
-        <p>Check the current weather in your city</p>
+        <h1>🌴 Fiji Weather Dashboard</h1>
+        <p>Weather Updates Across Fiji</p>
     </header>
 
     <nav aria-label="Main Navigation">
         <a href="#">Home</a>
-        <a href="#">Weather</a>
         <a href="#">Forecast</a>
+        <a href="#">Alerts</a>
         <a href="#">About</a>
     </nav>
 
     <section class="alert">
-    ⚠️ Weather Alert: Heavy rain expected in parts of Fiji.
-</section>
+        ⚠️ Weather Alert: Strong winds expected in some parts of Fiji.
+    </section>
 
     <main>
 
+        <!-- Search Section -->
         <section class="card">
             <h2>Search Weather</h2>
 
-            <label for="city">City Name:</label>
+            <label for="city">Location:</label>
 
             <input
-                <input type="text" id="city" placeholder="🔍 Search city">
+                type="text"
+                id="city"
+                placeholder="🔍 Enter city name"
+                aria-label="Enter city name">
 
             <button
                 onclick="searchWeather()"
@@ -48,17 +52,10 @@
                 Search
             </button>
         </section>
-<section class="card">
-    <h2>Today's Summary</h2>
 
-    <p>🌡 Average Temperature: 29°C</p>
-    <p>💧 Humidity: 72%</p>
-    <p>🌬 Wind Speed: 10 km/h</p>
-    <p>☀️ Condition: Mostly Sunny</p>
-</section>
-
+        <!-- Current Weather -->
         <section class="card">
-            <h2>Current Weather</h2>
+            <h2>Current Weather Around Fiji</h2>
 
             <article>
                 <h3>🌞 Suva</h3>
@@ -80,10 +77,25 @@
                 <p>Condition: Partly Cloudy</p>
                 <p>Humidity: 72%</p>
             </article>
+
+            <article>
+                <h3>🌧 Labasa</h3>
+                <p>Temperature: 27°C</p>
+                <p>Condition: Rainy</p>
+                <p>Humidity: 80%</p>
+            </article>
+
+            <article>
+                <h3>🌦 Lautoka</h3>
+                <p>Temperature: 30°C</p>
+                <p>Condition: Partly Cloudy</p>
+                <p>Humidity: 70%</p>
+            </article>
         </section>
 
+        <!-- Forecast -->
         <section class="card">
-            <h2>3-Day Forecast</h2>
+            <h2>5-Day Forecast</h2>
 
             <article>
                 <h3>Friday</h3>
@@ -99,23 +111,41 @@
                 <h3>Sunday</h3>
                 <p>🌧 Rainy - 24°C</p>
             </article>
+
+            <article>
+                <h3>Monday</h3>
+                <p>☀️ Sunny - 29°C</p>
+            </article>
+
+            <article>
+                <h3>Tuesday</h3>
+                <p>🌤 Mostly Sunny - 30°C</p>
+            </article>
         </section>
 
+        <!-- Summary -->
         <section class="card">
-            <h2>Weather Statistics</h2>
+            <h2>Fiji Weather Summary</h2>
 
             <p>🌡 Average Temperature: 29°C</p>
+            <p>💧 Average Humidity: 73%</p>
+            <p>🌬 Wind Speed: 12 km/h</p>
+            <p>☀️ Overall Condition: Mostly Sunny</p>
+
             <br>
 
-            <p>🔥 Highest Temperature: 31°C</p>
-            <br>
+            <h3>Regions Covered</h3>
 
-            <p>💧 Average Humidity: 72%</p>
-            <br>
-
-            <p>🌤 Most Common Condition: Sunny</p>
+            <ul>
+                <li>Suva</li>
+                <li>Nadi</li>
+                <li>Tavua</li>
+                <li>Lautoka</li>
+                <li>Labasa</li>
+            </ul>
         </section>
 
+        <!-- Weather Tips -->
         <aside class="card">
             <h2>Weather Tips</h2>
 
@@ -123,15 +153,15 @@
                 <li>Carry an umbrella.</li>
                 <li>Stay hydrated.</li>
                 <li>Use sunscreen.</li>
-                <li>Check the forecast.</li>
-                <li>Stay indoors during storms.</li>
+                <li>Check weather alerts.</li>
+                <li>Avoid flooded roads.</li>
             </ul>
         </aside>
 
     </main>
 
     <footer>
-        <p>© 2026 Weather App</p>
+        <p>© 2026 Fiji Weather Dashboard</p>
         <p>Created by Simran</p>
     </footer>
 
