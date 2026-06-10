@@ -1,189 +1,140 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #7dd3fc, #c7d2fe);
-    min-height: 100vh;
+body{
+    font-family:Arial,sans-serif;
+    background:#eef4ff;
+    color:#333;
 }
 
-/* Header */
-
-header {
-    background: #1e3a8a;
-    color: white;
-    text-align: center;
-    padding: 30px;
+header{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:30px;
 }
 
-header h1 {
-    margin-bottom: 10px;
+header h1{
+    margin-bottom:10px;
 }
 
-header p {
-    font-size: 16px;
-}
-
-/* Navigation */
-
-nav {
-    background: #2563eb;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #dbeafe;
-}
-
-/* Main Flexbox Layout */
-
-main {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: stretch;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-
-    padding: 25px;
-}
-
-/* Cards */
-
-.card {
-    flex: 1;
-    min-width: 260px;
-
-    background: white;
-
-    padding: 20px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h2 {
-    color: #1e3a8a;
-    margin-bottom: 15px;
-}
-
-/* Articles */
-
-.card article {
-    margin-bottom: 15px;
-    padding-left: 10px;
-    border-left: 4px solid #2563eb;
-}
-
-.card article h3 {
-    margin-bottom: 5px;
-}
-
-/* Form */
-
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-/* Button */
-
-button {
-    width: 100%;
-    padding: 10px;
-
-    background: #2563eb;
-    color: white;
-
-    border: none;
-    border-radius: 8px;
-
-    cursor: pointer;
-}
-
-button:hover {
-    background: #1d4ed8;
-}
-
-/* Accessibility */
-
-button:focus,
-input:focus,
-a:focus {
-    outline: 3px solid orange;
-}
-
-/* Weather Tips */
-
-ul {
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-}
-.alert{
+.alert-banner{
     background:#ef4444;
     color:white;
-    padding:15px;
     text-align:center;
+    padding:15px;
     font-weight:bold;
+}
+
+.search-box{
+    background:white;
+    margin:25px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.search-row{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+input{
+    flex:1;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    padding:12px 25px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+main{
+    padding:25px;
+}
+
+.cities-section,
+.forecast-section,
+.tips-section{
+    background:white;
+    margin-bottom:25px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.city-grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.city-card{
+    background:#eff6ff;
+    width:180px;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.city-card:hover{
+    transform:translateY(-5px);
+}
+
+.city-card p{
+    font-size:28px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.forecast-grid{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.forecast-grid article{
+    background:#dbeafe;
+    width:120px;
+    text-align:center;
+    padding:20px;
     border-radius:10px;
-    margin:20px;
-}
-/* Footer */
-
-footer {
-    background: #1e3a8a;
-    color: white;
-
-    text-align: center;
-
-    padding: 20px;
-
-    margin-top: 20px;
 }
 
-/* Mobile */
+.forecast-grid p:nth-child(2){
+    font-size:30px;
+}
 
-@media (max-width: 768px) {
-    main {
-        flex-direction: column;
-    }
+.tips-section ul{
+    padding-left:20px;
+}
 
-    nav {
-        flex-wrap: wrap;
-    }
+.tips-section li{
+    margin-bottom:10px;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
