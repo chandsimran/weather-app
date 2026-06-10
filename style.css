@@ -119,6 +119,57 @@ button:focus,
 a:focus {
     outline: 3px solid rgb(0, 158, 231);
 }
+/* Smooth hover effects */
+
+nav a:hover {
+    color: yellow;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+}
+
+/* Rounded cards */
+
+.card {
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Card animation */
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Better weather icon */
+
+.weather-icon {
+    width: 100px;
+    display: block;
+    margin: 15px auto;
+}
+
+/* Nice headings */
+
+h1, h2 {
+    letter-spacing: 1px;
+}
+
+/* Accessibility focus */
+
+input:focus,
+button:focus,
+a:focus {
+    outline: 3px solid orange;
+}
+
+/* Soft shadow */
+
+.card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 
 /* Footer */
 
