@@ -117,7 +117,7 @@ li {
 input:focus,
 button:focus,
 a:focus {
-    outline: 3px solid orange;
+    outline: 3px solid rgb(0, 158, 231);
 }
 
 /* Footer */
