@@ -7,6 +7,11 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+    function searchWeather() {
+        alert("Searching weather for your city...");
+    }
+</script>
 
 <body>
 
@@ -34,9 +39,9 @@
                 placeholder="Enter city"
                 aria-label="Enter city name">
 
-            <button aria-label="Search weather">
-                Search
-            </button>
+            <button onclick="searchWeather()" aria-label="Search weather">
+    Search
+</button>
         </section>
 
         <section class="card">
@@ -88,7 +93,7 @@
             <h2>Weather Tips</h2>
 
             <ul>
-    <li>☂ Carry an umbrella.</li>
+    <li>Carry an umbrella.</li>
     <li> Stay hydrated.</li>
     <li> Use sunscreen.</li>
     <li> Check the forecast.</li>
