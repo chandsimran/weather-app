@@ -7,23 +7,21 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<script>
-    function searchWeather() {
-        alert("Searching weather for your city...");
-    }
-</script>
 
 <body>
+
+    <script>
+        function searchWeather() {
+            alert("Searching weather for your city...");
+        }
+    </script>
 
     <header>
         <h1>🌤 Weather App</h1>
         <p>Check the current weather in your city</p>
     </header>
 
- 
-
-
-    <nav>
+    <nav aria-label="Main Navigation">
         <a href="#">Home</a>
         <a href="#">Weather</a>
         <a href="#">About</a>
@@ -42,82 +40,56 @@
                 placeholder="Enter city"
                 aria-label="Enter city name">
 
-            <button onclick="searchWeather()" aria-label="Search weather">
-    Search
-</button>
-        
-
-                
+            <button
+                onclick="searchWeather()"
+                aria-label="Search Weather">
+                Search
+            </button>
         </section>
 
         <section class="card">
-            
-            <section>
-    <h2>Current Weather</h2>
+            <h2>Current Weather</h2>
 
-    <article>
-        <h3>Suva</h3>
-     
-        <p>Temperature: 28°C</p>
-        <p>Condition: Sunny</p>
-        <p>Humidity: 75%</p>
-    </article>
+            <article>
+                <h3>🌞 Suva</h3>
+                <p>Temperature: 28°C</p>
+                <p>Condition: Sunny</p>
+                <p>Humidity: 75%</p>
+            </article>
 
-    <article>
-        <h3>Nadi</h3>
-      
-        <p>Temperature: 31°C</p>
-        <p>Condition: Sunny</p>
-        <p>Humidity: 68%</p>
-    </article>
+            <article>
+                <h3>🌞 Nadi</h3>
+                <p>Temperature: 31°C</p>
+                <p>Condition: Sunny</p>
+                <p>Humidity: 68%</p>
+            </article>
 
-    <article>
-        <h3>Tavua</h3>
-       
-        <p>Temperature: 29°C</p>
-        <p>Condition: Partly Cloudy</p>
-        <p>Humidity: 72%</p>
-    </article>
-</section>
-<section>
-    <h2>3-Day Forecast</h2>
+            <article>
+                <h3>⛅ Tavua</h3>
+                <p>Temperature: 29°C</p>
+                <p>Condition: Partly Cloudy</p>
+                <p>Humidity: 72%</p>
+            </article>
 
-    <article>
-        <h3>Friday</h3>
-        <p>☀️ Sunny - 28°C</p>
-    </article>
+        </section>
 
-    <article>
-        <h3>Saturday</h3>
-        <p>⛅ Partly Cloudy - 27°C</p>
-    </article>
+        <section class="card">
+            <h2>3-Day Forecast</h2>
 
-    <article>
-        <h3>Sunday</h3>
-        <p>🌧 Rainy - 24°C</p>
-    </article>
-</section>
-<div class="cities">
+            <article>
+                <h3>Friday</h3>
+                <p>☀️ Sunny - 28°C</p>
+            </article>
 
-    <article>
-        <h3>Suva</h3>
-        <p>🌞 28°C</p>
-        <p>Sunny</p>
-    </article>
+            <article>
+                <h3>Saturday</h3>
+                <p>⛅ Partly Cloudy - 27°C</p>
+            </article>
 
-    <article>
-        <h3>Nadi</h3>
-        <p>🌞 31°C</p>
-        <p>Sunny</p>
-    </article>
-
-    <article>
-        <h3>Tavua</h3>
-        <p>⛅ 29°C</p>
-        <p>Partly Cloudy</p>
-    </article>
-
-</div>
+            <article>
+                <h3>Sunday</h3>
+                <p>🌧 Rainy - 24°C</p>
+            </article>
 
         </section>
 
@@ -125,17 +97,12 @@
             <h2>Weather Tips</h2>
 
             <ul>
-    <li>Carry an umbrella.</li>
-    <li> Stay hydrated.</li>
-    <li> Use sunscreen.</li>
-    <li> Check the forecast.</li>
-    <li>Stay indoors during storms.</li>
-    
-</ul>
-                
-
-            
-
+                <li>Carry an umbrella.</li>
+                <li>Stay hydrated.</li>
+                <li>Use sunscreen.</li>
+                <li>Check the forecast.</li>
+                <li>Stay indoors during storms.</li>
+            </ul>
         </aside>
 
     </main>
