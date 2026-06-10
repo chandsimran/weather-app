@@ -12,7 +12,7 @@ body {
 /* Header */
 
 header {
-    background-color: #1e3a8a;
+    background-color: #69b476;
     color: white;
     text-align: center;
     padding: 30px;
@@ -25,7 +25,7 @@ header h1 {
 /* Navigation */
 
 nav {
-    background-color: #2563eb;
+    background-color: #a068a0;
     text-align: center;
     padding: 15px;
 }
@@ -38,7 +38,7 @@ nav a {
 }
 
 nav a:hover {
-    color: yellow;
+    color: rgb(179, 179, 121);
 }
 
 /* Main Layout */
@@ -79,7 +79,7 @@ input {
 
 button {
     padding: 10px 20px;
-    background-color: #2563eb;
+    background-color: #585d68;
     color: white;
     border: none;
     border-radius: 6px;
@@ -88,7 +88,7 @@ button {
 }
 
 button:hover {
-    background-color: #1d4ed8;
+    background-color: #9cabac;
 }
 
 /* Weather Image */
@@ -118,7 +118,7 @@ li {
 /* Footer */
 
 footer {
-    background-color: #1e3a8a;
+    background-color: #5174c7;
     color: white;
     text-align: center;
     padding: 20px;
