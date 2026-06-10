@@ -1,163 +1,192 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #38bdf8, #22c55e);
-    color: #1e293b;
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f8fc;
+    color:#1e293b;
 }
 
-header {
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 30px;
+header{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
 }
 
-header p {
-    margin-top: 10px;
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
 }
 
-nav {
-    background: #1d4ed8;
-    text-align: center;
-    padding: 15px;
+nav{
+    background:#2563eb;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:18px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-nav a:hover {
-    color: #dbeafe;
+nav a:hover{
+    color:#dbeafe;
 }
 
-.alert {
-    background: #ef4444;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin: 20px;
-    border-radius: 10px;
-    font-weight: bold;
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
 }
 
-main {
-    padding: 20px;
+.alert-banner{
+    background:#ef4444;
+    color:white;
+    text-align:center;
+    padding:18px;
+    border-radius:12px;
+    font-weight:bold;
+    margin-bottom:25px;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #0f172a;
+.welcome{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
-.cities {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.cities-section,
+.forecast-section,
+.summary-section,
+.search-section,
+.tips-section{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
-.city-card {
-    background: white;
-    padding: 20px;
-    width: 180px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+h2{
+    color:#1e3a8a;
+    margin-bottom:20px;
 }
 
-.city-card h3 {
-    margin-bottom: 10px;
+.cities{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-.city-card p:first-of-type {
-    font-size: 28px;
-    font-weight: bold;
-    color: #1d4ed8;
+.city-card{
+    width:220px;
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+    background:#f8fafc;
+    border-top:5px solid #2563eb;
 }
 
-.forecast-section {
-    margin-top: 40px;
+.temp{
+    font-size:2rem;
+    font-weight:bold;
+    color:#2563eb;
+    margin:10px 0;
 }
 
-.forecast {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+.forecast-grid{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
-.forecast-card {
-    background: #2563eb;
-    color: white;
-    padding: 20px;
-    width: 120px;
-    text-align: center;
-    border-radius: 15px;
+.forecast-card{
+    width:130px;
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:15px;
 }
 
-.forecast-card h3 {
-    margin-bottom: 10px;
+.forecast-card h3{
+    margin-bottom:10px;
 }
 
-.bottom-section {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 40px;
+.summary-section ul,
+.tips-section ul{
+    padding-left:20px;
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    width: 400px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+.summary-section li,
+.tips-section li{
+    margin-bottom:12px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+label{
+    display:block;
+    margin-bottom:10px;
+    font-weight:bold;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background: #1d4ed8;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    margin-bottom:15px;
 }
 
-button:hover {
-    background: #1e40af;
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:1rem;
 }
 
-ul {
-    padding-left: 20px;
+button:hover{
+    background:#1d4ed8;
 }
 
-li {
-    margin-bottom: 10px;
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:20px;
 }
 
-footer {
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+@media(max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .city-card{
+        width:100%;
+    }
+
+    .forecast-card{
+        width:100px;
+    }
 }

@@ -30,8 +30,16 @@
 
     <main>
 
-        <section class="alert">
+        <section class="alert-banner">
             ⚠ Weather Alert: Heavy rain expected in some areas this weekend.
+        </section>
+
+        <section class="welcome">
+            <h2>Welcome to Fiji Weather</h2>
+            <p>
+                Stay updated with current weather conditions, forecasts,
+                and alerts across Fiji's major cities.
+            </p>
         </section>
 
         <section class="cities-section">
@@ -40,26 +48,26 @@
             <div class="cities">
 
                 <article class="city-card">
-                    <h3>☀️ Suva</h3>
-                    <p>28°C</p>
+                    <h3>☀ Suva</h3>
+                    <p class="temp">28°C</p>
                     <p>Sunny</p>
                 </article>
 
                 <article class="city-card">
-                    <h3>☀️ Nadi</h3>
-                    <p>31°C</p>
+                    <h3>☀ Nadi</h3>
+                    <p class="temp">31°C</p>
                     <p>Sunny</p>
                 </article>
 
                 <article class="city-card">
                     <h3>⛅ Tavua</h3>
-                    <p>29°C</p>
+                    <p class="temp">29°C</p>
                     <p>Partly Cloudy</p>
                 </article>
 
                 <article class="city-card">
                     <h3>🌧 Labasa</h3>
-                    <p>26°C</p>
+                    <p class="temp">26°C</p>
                     <p>Rainy</p>
                 </article>
 
@@ -69,65 +77,81 @@
         <section class="forecast-section">
             <h2>📅 Fiji 5-Day Forecast</h2>
 
-            <div class="forecast">
+            <div class="forecast-grid">
 
                 <article class="forecast-card">
                     <h3>Mon</h3>
-                    <p>☀️ 30°C</p>
+                    <p>☀</p>
+                    <p>30°C</p>
                 </article>
 
                 <article class="forecast-card">
                     <h3>Tue</h3>
-                    <p>⛅ 29°C</p>
+                    <p>⛅</p>
+                    <p>29°C</p>
                 </article>
 
                 <article class="forecast-card">
                     <h3>Wed</h3>
-                    <p>🌧 26°C</p>
+                    <p>🌧</p>
+                    <p>26°C</p>
                 </article>
 
                 <article class="forecast-card">
                     <h3>Thu</h3>
-                    <p>☀️ 31°C</p>
+                    <p>☀</p>
+                    <p>31°C</p>
                 </article>
 
                 <article class="forecast-card">
                     <h3>Fri</h3>
-                    <p>⛅ 28°C</p>
+                    <p>⛅</p>
+                    <p>28°C</p>
                 </article>
 
             </div>
         </section>
 
-        <section class="bottom-section">
+        <section class="summary-section">
+            <h2>📊 Today's Weather Summary</h2>
 
-            <section class="card">
-                <h2>🔍 Search Weather</h2>
-
-                <label for="city">City Name</label>
-
-                <input
-                    type="text"
-                    id="city"
-                    placeholder="Enter city name"
-                    aria-label="Enter city name">
-
-                <button onclick="searchWeather()">
-                    Search
-                </button>
-            </section>
-
-            <aside class="card">
-                <h2>💡 Weather Tips</h2>
-
-                <ul>
-                    <li>Carry an umbrella.</li>
-                    <li>Stay hydrated.</li>
-                    <li>Check forecasts daily.</li>
-                </ul>
-            </aside>
-
+            <ul>
+                <li>🌡 Average Temperature: 29°C</li>
+                <li>💧 Humidity: 72%</li>
+                <li>🌬 Wind Speed: 12 km/h</li>
+                <li>☀ Condition: Mostly Sunny</li>
+            </ul>
         </section>
+
+        <section class="search-section">
+            <h2>🔍 Search Weather</h2>
+
+            <label for="city">City Name</label>
+
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name"
+                aria-label="Enter city name">
+
+            <button
+                onclick="searchWeather()"
+                aria-label="Search Weather">
+                Search Weather
+            </button>
+        </section>
+
+        <aside class="tips-section">
+            <h2>💡 Weather Tips</h2>
+
+            <ul>
+                <li>Carry an umbrella.</li>
+                <li>Stay hydrated.</li>
+                <li>Use sunscreen.</li>
+                <li>Check forecasts daily.</li>
+                <li>Avoid flooded roads.</li>
+            </ul>
+        </aside>
 
     </main>
 
