@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,6 +12,7 @@
 
     <header>
         <h1>Weather App</h1>
+        <p>Check the current weather in your city.</p>
     </header>
 
     <nav>
@@ -25,33 +28,83 @@
 
             <label for="city">City Name:</label>
 
-            <input type="text" id="city" placeholder="Enter city">
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city"
+                aria-label="Enter city name">
 
-            <button>Search</button>
+            <button aria-label="Search weather">
+                Search
+            </button>
         </section>
 
         <section>
             <h2>Current Weather</h2>
 
             <article>
+
                 <h3>Suva</h3>
+
+                <img
+                    src="https://tse2.mm.bing.net/th/id/OIP.2gg2IV6m6D-YEUf8VsLIhwHaHa?cb=thfc1falcon2&pid=ImgDet&w=203&h=203&c=7&o=7&rm=3"
+                    alt="Sunny weather icon">
+
+                <p>Date: 11 June 2026</p>
 
                 <p>Temperature: 28°C</p>
 
                 <p>Condition: Sunny</p>
+
+                <p>Humidity: 75%</p>
+
+                <p>Wind Speed: 10 km/h</p>
+
+                 <section>
+         
+
+            <article>
+
+            <article>
+
+                <h3>Tavua</h3>
+
+                <img
+                    src="https://thf.bing.com/th/id/OIP.lsG0GEzUF7GZTjttwvc2OAHaHa?w=185&h=184&c=7&r=0&o=7&cb=thfc1falcon2&pid=1.7&rm=3" 
+                     alt="Sunny weather icon">
+
+
+                <p>Date: 11 June 2026</p>
+
+                <p>Temperature: 128°C</p>
+
+                <p>Condition: Shady</p>
+
+                <p>Humidity: 140%</p>
+
+                <p>Wind Speed: 100 km/h</p>
+
             </article>
+
         </section>
 
         <aside>
-            <h2>Weather Tip</h2>
 
-            <p>Carry an umbrella during rainy weather.</p>
+            <h2>Weather Tips</h2>
+
+            <ul>
+                <li>Carry an umbrella during rainy weather.</li>
+                <li>Drink plenty of water on hot days.</li>
+                <li>Check the forecast before travelling.</li>
+            </ul>
+
         </aside>
 
     </main>
 
     <footer>
-        <p>© 2026 Weather App</p>
+        <p>&copy; 2026 Weather App</p>
+        <p>Created by Simran</p>
     </footer>
 
 </body>
