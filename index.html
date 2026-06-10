@@ -28,6 +28,10 @@
         <a href="#">About</a>
     </nav>
 
+    <section class="alert">
+    ⚠️ Weather Alert: Heavy rain expected in parts of Fiji.
+</section>
+
     <main>
 
         <section class="card">
@@ -36,10 +40,7 @@
             <label for="city">City Name:</label>
 
             <input
-                type="text"
-                id="city"
-                placeholder="Enter city"
-                aria-label="Enter city name">
+                <input type="text" id="city" placeholder="🔍 Search city">
 
             <button
                 onclick="searchWeather()"
@@ -57,7 +58,14 @@
                 <p>Condition: Sunny</p>
                 <p>Humidity: 75%</p>
             </article>
+<section class="card">
+    <h2>Today's Summary</h2>
 
+    <p>🌡 Average Temperature: 29°C</p>
+    <p>💧 Humidity: 72%</p>
+    <p>🌬 Wind Speed: 10 km/h</p>
+    <p>☀️ Condition: Mostly Sunny</p>
+</section>
             <article>
                 <h3>🌞 Nadi</h3>
                 <p>Temperature: 31°C</p>
