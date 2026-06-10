@@ -8,7 +8,33 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #74ebd5, #9face6);
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(
+        -45deg,
+        #87ceeb,
+        #008dce,
+        #81d4fa,
+        #b3e5fc
+    );
+    background-size: 400% 400%;
+    animation: waterFlow 10s ease infinite;
+}
 
+@keyframes waterFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
 /* Header */
 
 header {
