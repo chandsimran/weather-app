@@ -1,121 +1,149 @@
-<header>
-    <h1>🌤 Fiji Weather Dashboard</h1>
-    <p>Weather updates across Fiji</p>
-</header>
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="alert-banner">
-    ⚠️ Heavy Rain Warning for Western Division
-</section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiji Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<section class="search-box">
-    <h2>🔍 Search Weather</h2>
+<body>
 
-    <label for="city">City Name</label>
+    <script>
+        function searchWeather() {
+            alert("Searching weather for your city...");
+        }
+    </script>
 
-    <div class="search-row">
-        <input type="text"
-               id="city"
-               placeholder="Enter city"
-               aria-label="Enter city name">
+    <header>
+        <h1>🌤 Fiji Weather Dashboard</h1>
+        <p>Weather updates across Fiji</p>
+    </header>
 
-        <button onclick="searchWeather()">
-            Search
-        </button>
-    </div>
-</section>
+    <nav aria-label="Main Navigation">
+        <a href="#">Home</a>
+        <a href="#">Forecast</a>
+        <a href="#">Cities</a>
+        <a href="#">About</a>
+    </nav>
 
-<main>
-
-    <section class="cities-section">
-
-        <h2>🌍 Current Weather</h2>
-
-        <div class="city-grid">
-
-            <article class="city-card">
-                <h3>🌞 Suva</h3>
-                <p>28°C</p>
-                <span>Sunny</span>
-            </article>
-
-            <article class="city-card">
-                <h3>🌞 Nadi</h3>
-                <p>31°C</p>
-                <span>Sunny</span>
-            </article>
-
-            <article class="city-card">
-                <h3>⛅ Tavua</h3>
-                <p>29°C</p>
-                <span>Partly Cloudy</span>
-            </article>
-
-            <article class="city-card">
-                <h3>🌧 Labasa</h3>
-                <p>26°C</p>
-                <span>Rainy</span>
-            </article>
-
-        </div>
-
+    <section class="hero">
+        <h2>Welcome to Fiji Weather</h2>
+        <p>
+            Stay updated with current weather conditions,
+            forecasts and weather alerts across Fiji.
+        </p>
     </section>
 
-    <section class="forecast-section">
-
-        <h2>📅 5-Day Forecast</h2>
-
-        <div class="forecast-grid">
-
-            <article>
-                <h3>Mon</h3>
-                <p>☀️</p>
-                <p>30°C</p>
-            </article>
-
-            <article>
-                <h3>Tue</h3>
-                <p>⛅</p>
-                <p>29°C</p>
-            </article>
-
-            <article>
-                <h3>Wed</h3>
-                <p>🌧</p>
-                <p>26°C</p>
-            </article>
-
-            <article>
-                <h3>Thu</h3>
-                <p>☀️</p>
-                <p>31°C</p>
-            </article>
-
-            <article>
-                <h3>Fri</h3>
-                <p>🌦</p>
-                <p>28°C</p>
-            </article>
-
-        </div>
-
+    <section class="alert-banner">
+        ⚠️ Weather Alert: Heavy rain expected in some areas this weekend.
     </section>
 
-    <aside class="tips-section">
+    <main>
 
-        <h2>💡 Weather Tips</h2>
+        <section class="card search-card">
+            <h2>🔍 Search Weather</h2>
 
-        <ul>
-            <li>Carry an umbrella.</li>
-            <li>Stay hydrated.</li>
-            <li>Use sunscreen.</li>
-            <li>Check the forecast.</li>
-        </ul>
+            <label for="city">City Name</label>
 
-    </aside>
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name"
+                aria-label="Enter city name">
 
-</main>
+            <button onclick="searchWeather()">
+                Search
+            </button>
+        </section>
 
-<footer>
-    <p>© 2026 Fiji Weather Dashboard</p>
-    <p>Created by Simran</p>
-</footer>
+        <section class="card">
+            <h2>🌍 Fiji Cities Weather</h2>
+
+            <div class="cities">
+
+                <article class="city-card">
+                    <h3>🌞 Suva</h3>
+                    <p class="temp">28°C</p>
+                    <p>Sunny</p>
+                </article>
+
+                <article class="city-card">
+                    <h3>🌞 Nadi</h3>
+                    <p class="temp">31°C</p>
+                    <p>Sunny</p>
+                </article>
+
+                <article class="city-card">
+                    <h3>⛅ Tavua</h3>
+                    <p class="temp">29°C</p>
+                    <p>Partly Cloudy</p>
+                </article>
+
+                <article class="city-card">
+                    <h3>🌧 Labasa</h3>
+                    <p class="temp">26°C</p>
+                    <p>Rainy</p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+            <h2>📅 5-Day Forecast</h2>
+
+            <div class="forecast">
+
+                <article>
+                    <h3>Monday</h3>
+                    <p>☀️ 30°C</p>
+                </article>
+
+                <article>
+                    <h3>Tuesday</h3>
+                    <p>⛅ 29°C</p>
+                </article>
+
+                <article>
+                    <h3>Wednesday</h3>
+                    <p>🌧 26°C</p>
+                </article>
+
+                <article>
+                    <h3>Thursday</h3>
+                    <p>☀️ 31°C</p>
+                </article>
+
+                <article>
+                    <h3>Friday</h3>
+                    <p>⛅ 28°C</p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <aside class="card tips-section">
+            <h2>💡 Weather Tips</h2>
+
+            <ul>
+                <li>Carry an umbrella.</li>
+                <li>Stay hydrated.</li>
+                <li>Use sunscreen.</li>
+                <li>Check forecasts daily.</li>
+                <li>Avoid flooded roads.</li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Fiji Weather Dashboard</p>
+        <p>Created by Simran</p>
+    </footer>
+
+</body>
+
+</html>
