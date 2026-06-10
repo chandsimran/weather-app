@@ -12,38 +12,41 @@
 
     <script>
         function searchWeather() {
-            alert("Searching weather for your location...");
+            alert("Searching weather for your city...");
         }
     </script>
 
     <header>
-        <h1>🌴 Fiji Weather Dashboard</h1>
-        <p>Weather Updates Across Fiji</p>
+        <h1>🌤 Fiji Weather Dashboard</h1>
+        <p>Weather updates across Fiji's major cities</p>
     </header>
 
     <nav aria-label="Main Navigation">
         <a href="#">Home</a>
         <a href="#">Forecast</a>
-        <a href="#">Alerts</a>
         <a href="#">About</a>
     </nav>
 
-    <section class="alert">
-        ⚠️ Weather Alert: Strong winds expected in some parts of Fiji.
+    <section class="hero">
+        <h2>🇫🇯 Welcome to Fiji Weather</h2>
+        <p>Check weather conditions, forecasts, and weather tips for Fiji.</p>
+    </section>
+
+    <section class="alert-banner">
+        ⚠️ Weather Alert: Heavy rain expected in some areas this weekend.
     </section>
 
     <main>
 
-        <!-- Search Section -->
         <section class="card">
-            <h2>Search Weather</h2>
+            <h2>🔍 Search Weather</h2>
 
-            <label for="city">Location:</label>
+            <label for="city">City Name:</label>
 
             <input
                 type="text"
                 id="city"
-                placeholder="🔍 Enter city name"
+                placeholder="Enter city name"
                 aria-label="Enter city name">
 
             <button
@@ -53,108 +56,80 @@
             </button>
         </section>
 
-        <!-- Current Weather -->
         <section class="card">
-            <h2>Current Weather Around Fiji</h2>
+            <h2>🌍 Fiji Cities Weather</h2>
 
-            <article>
-                <h3>🌞 Suva</h3>
-                <p>Temperature: 28°C</p>
-                <p>Condition: Sunny</p>
-                <p>Humidity: 75%</p>
-            </article>
+            <div class="city-grid">
 
-            <article>
-                <h3>🌞 Nadi</h3>
-                <p>Temperature: 31°C</p>
-                <p>Condition: Sunny</p>
-                <p>Humidity: 68%</p>
-            </article>
+                <article class="city-card">
+                    <h3>🌞 Suva</h3>
+                    <p>28°C</p>
+                    <p>Sunny</p>
+                </article>
 
-            <article>
-                <h3>⛅ Tavua</h3>
-                <p>Temperature: 29°C</p>
-                <p>Condition: Partly Cloudy</p>
-                <p>Humidity: 72%</p>
-            </article>
+                <article class="city-card">
+                    <h3>🌞 Nadi</h3>
+                    <p>31°C</p>
+                    <p>Sunny</p>
+                </article>
 
-            <article>
-                <h3>🌧 Labasa</h3>
-                <p>Temperature: 27°C</p>
-                <p>Condition: Rainy</p>
-                <p>Humidity: 80%</p>
-            </article>
+                <article class="city-card">
+                    <h3>⛅ Tavua</h3>
+                    <p>29°C</p>
+                    <p>Partly Cloudy</p>
+                </article>
 
-            <article>
-                <h3>🌦 Lautoka</h3>
-                <p>Temperature: 30°C</p>
-                <p>Condition: Partly Cloudy</p>
-                <p>Humidity: 70%</p>
-            </article>
+                <article class="city-card">
+                    <h3>🌧 Labasa</h3>
+                    <p>26°C</p>
+                    <p>Rainy</p>
+                </article>
+
+            </div>
         </section>
 
-        <!-- Forecast -->
         <section class="card">
-            <h2>5-Day Forecast</h2>
+            <h2>📅 5-Day Forecast</h2>
 
-            <article>
-                <h3>Friday</h3>
-                <p>☀️ Sunny - 28°C</p>
-            </article>
+            <div class="forecast">
 
-            <article>
-                <h3>Saturday</h3>
-                <p>⛅ Partly Cloudy - 27°C</p>
-            </article>
+                <article>
+                    <h3>Monday</h3>
+                    <p>☀️ 30°C</p>
+                </article>
 
-            <article>
-                <h3>Sunday</h3>
-                <p>🌧 Rainy - 24°C</p>
-            </article>
+                <article>
+                    <h3>Tuesday</h3>
+                    <p>⛅ 29°C</p>
+                </article>
 
-            <article>
-                <h3>Monday</h3>
-                <p>☀️ Sunny - 29°C</p>
-            </article>
+                <article>
+                    <h3>Wednesday</h3>
+                    <p>🌧 26°C</p>
+                </article>
 
-            <article>
-                <h3>Tuesday</h3>
-                <p>🌤 Mostly Sunny - 30°C</p>
-            </article>
+                <article>
+                    <h3>Thursday</h3>
+                    <p>☀️ 31°C</p>
+                </article>
+
+                <article>
+                    <h3>Friday</h3>
+                    <p>🌦 28°C</p>
+                </article>
+
+            </div>
         </section>
 
-        <!-- Summary -->
-        <section class="card">
-            <h2>Fiji Weather Summary</h2>
-
-            <p>🌡 Average Temperature: 29°C</p>
-            <p>💧 Average Humidity: 73%</p>
-            <p>🌬 Wind Speed: 12 km/h</p>
-            <p>☀️ Overall Condition: Mostly Sunny</p>
-
-            <br>
-
-            <h3>Regions Covered</h3>
-
-            <ul>
-                <li>Suva</li>
-                <li>Nadi</li>
-                <li>Tavua</li>
-                <li>Lautoka</li>
-                <li>Labasa</li>
-            </ul>
-        </section>
-
-        <!-- Weather Tips -->
         <aside class="card">
-            <h2>Weather Tips</h2>
+            <h2>💡 Weather Tips</h2>
 
             <ul>
                 <li>Carry an umbrella.</li>
                 <li>Stay hydrated.</li>
                 <li>Use sunscreen.</li>
-                <li>Check weather alerts.</li>
-                <li>Avoid flooded roads.</li>
+                <li>Check the forecast daily.</li>
+                <li>Stay indoors during storms.</li>
             </ul>
         </aside>
 
