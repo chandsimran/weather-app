@@ -114,6 +114,11 @@ ul {
 li {
     margin-bottom: 10px;
 }
+input:focus,
+button:focus,
+a:focus {
+    outline: 3px solid orange;
+}
 
 /* Footer */
 
