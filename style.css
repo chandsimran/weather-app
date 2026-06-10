@@ -168,8 +168,8 @@ button:hover {
 .city-card {
     background: linear-gradient(
         135deg,
-        #ffd60a,
-        #ffb703
+        #9c4a7d,
+        #42b593
     );
 
     width: 170px;
@@ -217,7 +217,54 @@ button:hover {
 
     text-align: center;
 }
+.quick-cities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
 
+.quick-cities span {
+    background: #e0f2fe;
+    color: #0c4a6e;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.summary-list {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.summary-list li {
+    margin-bottom: 8px;
+}
+.quick-cities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.quick-cities span {
+    background: #e0f2fe;
+    color: #0c4a6e;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.summary-list {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.summary-list li {
+    margin-bottom: 8px;
+}
 /* TIPS */
 
 .tips-section ul {

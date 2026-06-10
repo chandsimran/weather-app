@@ -9,15 +9,42 @@
 </head>
 
 <body>
+<section class="card">
+    <h2>🔍 Search Weather</h2>
 
-    <script>
-        function searchWeather() {
-            alert("Searching weather for your city...");
-        }
-    </script>
+    <label for="city">City Name</label>
+
+    <input
+        type="text"
+        id="city"
+        placeholder="Enter city name"
+        aria-label="Enter city name">
+
+    <button onclick="searchWeather()">
+        Search Weather
+    </button>
+
+    <h3> Popular Cities</h3>
+
+    <div class="quick-cities">
+        <span> Suva</span>
+        <span> Nadi</span>
+        <span> Tavua</span>
+        <span> Labasa</span>
+    </div>
+
+    <h3> Today's Summary</h3>
+
+    <ul class="summary-list">
+        <li>🌡 Average Temp: 29°C</li>
+        <li>💧 Humidity: 72%</li>
+        <li>🌬 Wind: 12 km/h</li>
+        <li>☀ Mostly Sunny Across Fiji</li>
+    </ul>
+</section>
 
     <header>
-        <h1>🌤 Fiji Weather Dashboard</h1>
+        <h1> Fiji Weather Dashboard</h1>
         <p>Weather updates across Fiji</p>
     </header>
 
