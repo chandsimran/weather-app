@@ -8,37 +8,11 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #74ebd5, #9face6);
 }
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(
-        -45deg,
-        #87ceeb,
-        #008dce,
-        #81d4fa,
-        #b3e5fc
-    );
-    background-size: 400% 400%;
-    animation: waterFlow 10s ease infinite;
-}
 
-@keyframes waterFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
 /* Header */
 
 header {
-    background-color: #69b476;
+    background-color: #1e8a30;
     color: white;
     text-align: center;
     padding: 30px;
@@ -124,9 +98,7 @@ button:hover {
     display: block;
     margin: 15px 0;
 }
-.card {
-    backdrop-filter: blur(5px);
-}
+
 /* Forecast */
 
 article {
@@ -141,11 +113,6 @@ ul {
 
 li {
     margin-bottom: 10px;
-}
-input:focus,
-button:focus,
-a:focus {
-    outline: 3px solid rgb(19, 68, 133);
 }
 
 /* Footer */
