@@ -9,42 +9,15 @@
 </head>
 
 <body>
-<section class="card">
-    <h2>🔍 Search Weather</h2>
 
-    <label for="city">City Name</label>
-
-    <input
-        type="text"
-        id="city"
-        placeholder="Enter city name"
-        aria-label="Enter city name">
-
-    <button onclick="searchWeather()">
-        Search Weather
-    </button>
-
-    <h3> Popular Cities</h3>
-
-    <div class="quick-cities">
-        <span> Suva</span>
-        <span> Nadi</span>
-        <span> Tavua</span>
-        <span> Labasa</span>
-    </div>
-
-    <h3> Today's Summary</h3>
-
-    <ul class="summary-list">
-        <li>🌡 Average Temp: 29°C</li>
-        <li>💧 Humidity: 72%</li>
-        <li>🌬 Wind: 12 km/h</li>
-        <li>☀ Mostly Sunny Across Fiji</li>
-    </ul>
-</section>
+    <script>
+        function searchWeather() {
+            alert("Searching weather for your city...");
+        }
+    </script>
 
     <header>
-        <h1> Fiji Weather Dashboard</h1>
+        <h1>🌤 Fiji Weather Dashboard</h1>
         <p>Weather updates across Fiji</p>
     </header>
 
@@ -55,13 +28,21 @@
         <a href="#">About</a>
     </nav>
 
+    <section class="hero">
+        <h2>Welcome to Fiji Weather</h2>
+        <p>
+            Stay updated with current weather conditions,
+            forecasts and weather alerts across Fiji.
+        </p>
+    </section>
+
     <section class="alert-banner">
-        ⚠️ Weather Alert: Heavy rain expected in some parts of Fiji this weekend.
+        ⚠️ Weather Alert: Heavy rain expected in some areas this weekend.
     </section>
 
     <main>
 
-        <section class="card">
+        <section class="card search-card">
             <h2>🔍 Search Weather</h2>
 
             <label for="city">City Name</label>
@@ -78,15 +59,38 @@
         </section>
 
         <section class="card">
-            <h2>🌍 Fiji Cities Weather</h2>
+    <h2>🔍 Search Weather</h2>
 
-            <div class="cities">
+    <label for="city">City Name</label>
 
-                <article class="city-card">
-                    <h3>🌞 Suva</h3>
-                    <p class="temp">28°C</p>
-                    <p>Sunny</p>
-                </article>
+    <input
+        type="text"
+        id="city"
+        placeholder="Enter city name"
+        aria-label="Enter city name">
+
+    <button onclick="searchWeather()">
+        Search Weather
+    </button>
+
+    <h3>🌏 Popular Cities</h3>
+
+    <div class="quick-cities">
+        <span>🌞 Suva</span>
+        <span>🌞 Nadi</span>
+        <span>⛅ Tavua</span>
+        <span>🌧 Labasa</span>
+    </div>
+
+    <h3>📊 Today's Summary</h3>
+
+    <ul class="summary-list">
+        <li>🌡 Average Temp: 29°C</li>
+        <li>💧 Humidity: 72%</li>
+        <li>🌬 Wind: 12 km/h</li>
+        <li>☀ Mostly Sunny Across Fiji</li>
+    </ul>
+</section>
 
                 <article class="city-card">
                     <h3>🌞 Nadi</h3>
@@ -107,57 +111,52 @@
                 </article>
 
             </div>
+
         </section>
 
         <section class="card">
-            <h2>📅 Fiji National 5-Day Forecast</h2>
-
-            <p>General forecast across Fiji.</p>
+            <h2>📅 5-Day Forecast</h2>
 
             <div class="forecast">
 
                 <article>
-                    <h3>Mon</h3>
-                    <p>☀️</p>
-                    <p>26° - 30°</p>
+                    <h3>Monday</h3>
+                    <p>☀️ 30°C</p>
                 </article>
 
                 <article>
-                    <h3>Tue</h3>
-                    <p>⛅</p>
-                    <p>25° - 29°</p>
+                    <h3>Tuesday</h3>
+                    <p>⛅ 29°C</p>
                 </article>
 
                 <article>
-                    <h3>Wed</h3>
-                    <p>🌧</p>
-                    <p>24° - 28°</p>
+                    <h3>Wednesday</h3>
+                    <p>🌧 26°C</p>
                 </article>
 
                 <article>
-                    <h3>Thu</h3>
-                    <p>☀️</p>
-                    <p>26° - 31°</p>
+                    <h3>Thursday</h3>
+                    <p>☀️ 31°C</p>
                 </article>
 
                 <article>
-                    <h3>Fri</h3>
-                    <p>🌦</p>
-                    <p>25° - 29°</p>
+                    <h3>Friday</h3>
+                    <p>⛅ 28°C</p>
                 </article>
 
             </div>
+
         </section>
 
         <aside class="card tips-section">
             <h2>💡 Weather Tips</h2>
 
             <ul>
-                <li>☂️ Carry an umbrella.</li>
-                <li>💧 Stay hydrated.</li>
-                <li>🧴 Use sunscreen.</li>
-                <li>📱 Check forecasts daily.</li>
-                <li>⚠️ Avoid flooded roads.</li>
+                <li>Carry an umbrella.</li>
+                <li>Stay hydrated.</li>
+                <li>Use sunscreen.</li>
+                <li>Check forecasts daily.</li>
+                <li>Avoid flooded roads.</li>
             </ul>
         </aside>
 
