@@ -200,6 +200,15 @@ a:focus {
         transform: translateY(-8px);
     }
 }
+.loading {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.3;
+    }
+}
 
 /* Footer */
 
