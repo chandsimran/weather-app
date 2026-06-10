@@ -22,6 +22,32 @@ header h1{
     margin-bottom:10px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    background: #2563eb;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #facc15;
+}
+
 nav{
     background:#2563eb;
     display:flex;
