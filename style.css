@@ -22,27 +22,25 @@ nav a {
 }
 
 main {
+    display: flex;
+    gap: 20px;
     padding: 20px;
 }
 
 section {
     border: 1px solid black;
     padding: 15px;
-    margin-bottom: 15px;
+    flex: 2;
 }
 
 article {
-    padding: 10px;
-}
-
-img {
-    width: 100px;
+    margin-bottom: 15px;
 }
 
 aside {
     border: 1px solid black;
     padding: 15px;
-    margin-bottom: 15px;
+    flex: 1;
 }
 
 input {
@@ -51,6 +49,11 @@ input {
 
 button {
     padding: 5px 10px;
+}
+
+img {
+    display: block;
+    margin-bottom: 10px;
 }
 
 footer {
