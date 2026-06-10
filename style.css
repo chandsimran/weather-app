@@ -6,12 +6,12 @@
 
 body{
     font-family:Arial, sans-serif;
-    background:#f4f8fc;
-    color:#1e293b;
+    background:#e5e7ec;
+    color:#955aa3;
 }
 
 header{
-    background:#0f172a;
+    background:#31cfef;
     color:white;
     text-align:center;
     padding:40px 20px;
@@ -47,7 +47,7 @@ main{
 }
 
 .alert-banner{
-    background:#ef4444;
+    background:#886f6f;
     color:white;
     text-align:center;
     padding:18px;
@@ -164,13 +164,29 @@ button:hover{
 }
 
 footer{
-    background:#0f172a;
+    background:#366e8a;
     color:white;
     text-align:center;
     padding:25px;
     margin-top:20px;
 }
+.forecast-location {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 20px;
+    font-style: italic;
+}
 
+.weather-icon {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.forecast-card small {
+    display: block;
+    margin-top: 8px;
+    opacity: 0.9;
+}
 @media(max-width:768px){
 
     header h1{
