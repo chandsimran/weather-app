@@ -11,8 +11,8 @@
 <body>
 
     <header>
-        <h1>Weather App</h1>
-        <p>Check the current weather in your city.</p>
+        <h1>🌤 Weather App</h1>
+        <p>Check the current weather in your city</p>
     </header>
 
     <nav>
@@ -23,7 +23,7 @@
 
     <main>
 
-        <section>
+        <section class="card">
             <h2>Search Weather</h2>
 
             <label for="city">City Name:</label>
@@ -39,45 +39,52 @@
             </button>
         </section>
 
-        <section>
+        <section class="card">
             <h2>Current Weather</h2>
 
             <article>
+
                 <h3>Suva</h3>
 
                 <img
                     src="images/sun.png"
                     alt="Sunny weather icon"
-                    width="100">
+                    class="weather-icon">
 
-                <p>Date: 11 June 2026</p>
-                <p>Temperature: 28°C</p>
-                <p>Condition: Sunny</p>
-                <p>Humidity: 75%</p>
-                <p>Wind Speed: 10 km/h</p>
+                <p><strong>Date:</strong> 11 June 2026</p>
+
+                <p><strong>Temperature:</strong> 28°C</p>
+
+                <p><strong>Condition:</strong> Sunny</p>
+
+                <p><strong>Humidity:</strong> 75%</p>
+
+                <p><strong>Wind Speed:</strong> 10 km/h</p>
+
             </article>
         </section>
 
-        <section>
+        <section class="card">
             <h2>3 Day Forecast</h2>
 
             <article>
                 <h3>Friday</h3>
-                <p>Sunny - 28°C</p>
+                <p>☀ Sunny - 28°C</p>
             </article>
 
             <article>
                 <h3>Saturday</h3>
-                <p>Cloudy - 26°C</p>
+                <p>⛅ Cloudy - 26°C</p>
             </article>
 
             <article>
                 <h3>Sunday</h3>
-                <p>Rainy - 24°C</p>
+                <p>🌧 Rainy - 24°C</p>
             </article>
+
         </section>
 
-        <aside>
+        <aside class="card">
             <h2>Weather Tips</h2>
 
             <ul>
@@ -85,12 +92,13 @@
                 <li>Drink plenty of water on hot days.</li>
                 <li>Check the forecast before travelling.</li>
             </ul>
+
         </aside>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Weather App</p>
+        <p>© 2026 Weather App</p>
         <p>Created by Simran</p>
     </footer>
 
