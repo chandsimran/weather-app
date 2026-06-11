@@ -11,7 +11,7 @@ html {
 body {
     font-family: Arial, sans-serif;
     background: #f4f8fc;
-    color: #6b778a;
+    color: #5286da;
 }
 
 /* Header */
@@ -65,7 +65,7 @@ main {
 /* Alert Banner */
 
 .alert-banner {
-    background: #ac8787;
+    background: #fffcfc;
     color: white;
     text-align: center;
     padding: 15px;
@@ -107,7 +107,7 @@ h2 {
     text-align: center;
     padding: 20px;
     border-radius: 12px;
-    border-top: 5px solid #8790a3;
+    border-top: 5px solid #f8faff;
     transition: 0.3s;
 }
 
@@ -126,7 +126,7 @@ h2 {
 
 .forecast-location {
     text-align: center;
-    color: #64748b;
+    color: s#0065f3;
     margin-bottom: 20px;
 }
 
@@ -137,7 +137,7 @@ h2 {
 }
 
 .forecast-card {
-    background: #747f96;
+    background: #0d3a9b;
     color: white;
     text-align: center;
     padding: 20px;
@@ -194,7 +194,7 @@ button {
 }
 
 button:hover {
-    background: #5d616b;
+    background: #ffffff;
 }
 
 /* Lists */
