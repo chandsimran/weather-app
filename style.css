@@ -11,7 +11,7 @@ html {
 body {
     font-family: Arial, sans-serif;
     background: #f4f8fc;
-    color: #1e293b;
+    color: #6b778a;
 }
 
 /* Header */
@@ -51,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #facc15;
+    color: #ccc7b4;
 }
 
 /* Main Content */
@@ -118,7 +118,7 @@ h2 {
 .temp {
     font-size: 2rem;
     font-weight: bold;
-    color: #2563eb;
+    color: #838da3;
     margin: 10px 0;
 }
 
@@ -185,7 +185,7 @@ input {
 button {
     width: 100%;
     padding: 12px;
-    background: #2563eb;
+    background: #808694;
     color: white;
     border: none;
     border-radius: 8px;
@@ -194,7 +194,7 @@ button {
 }
 
 button:hover {
-    background: #1d4ed8;
+    background: #5d616b;
 }
 
 /* Lists */
