@@ -35,7 +35,7 @@ header p {
 /* Navigation - Flexbox */
 
 nav {
-    background: #2563eb;
+    background: #7e8ba7;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -65,7 +65,7 @@ main {
 /* Alert Banner */
 
 .alert-banner {
-    background: #ef4444;
+    background: #ac8787;
     color: white;
     text-align: center;
     padding: 15px;
@@ -90,7 +90,7 @@ main {
 }
 
 h2 {
-    color: #1e3a8a;
+    color: #5e6370;
     margin-bottom: 15px;
 }
 
@@ -107,7 +107,7 @@ h2 {
     text-align: center;
     padding: 20px;
     border-radius: 12px;
-    border-top: 5px solid #2563eb;
+    border-top: 5px solid #8790a3;
     transition: 0.3s;
 }
 
@@ -137,7 +137,7 @@ h2 {
 }
 
 .forecast-card {
-    background: #2563eb;
+    background: #747f96;
     color: white;
     text-align: center;
     padding: 20px;
@@ -210,7 +210,7 @@ li {
 /* Footer */
 
 footer {
-    background: #0f172a;
+    background: #b3b8c2;
     color: white;
     text-align: center;
     padding: 20px;
