@@ -35,7 +35,7 @@ header p {
 /* Navigation - Flexbox */
 
 nav {
-    background: #7e8ba7;
+    background: #000000;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -82,7 +82,7 @@ main {
 .tips-section,
 .cities-section,
 .forecast-section {
-    background: white;
+    background: rgb(0, 0, 0);
     padding: 25px;
     border-radius: 15px;
     margin-bottom: 25px;
