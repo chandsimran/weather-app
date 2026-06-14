@@ -1,408 +1,162 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiji Weather Dashboard</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #859fb9;
-            color: #c5cddd;
-        }
-
-        header {
-            background: #6181e0;
-            color: rgb(0, 0, 0);
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        header h1 {
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
-
-        nav {
-            background: #a4a6ac;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            padding: 15px;
-        }
-
-        nav a {
-            color: rgb(16, 19, 20);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #aebfc2;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: auto;
-            padding: 25px;
-        }
-
-        .alert-banner {
-            background: #ce5151;
-            color: rgb(20, 19, 19);
-            text-align: center;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .welcome,
-        .summary-section,
-        .search-section,
-        .tips-section,
-        .cities-section,
-        .forecast-section {
-            background: rgb(51, 47, 47);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(250, 9, 9, 0.08);
-        }
-
-        h2 {
-            color: #d8d8d8;
-            margin-bottom: 15px;
-        }
-
-        /* CSS GRID */
-
-        .cities {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .city-card {
-            background: #3e83b8;
-            text-align: center;
-            padding: 20px;
-            border-radius: 12px;
-            border-top: 5px solid #5de464;
-        }
-
-        .temp {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #06090f;
-            margin: 10px 0;
-        }
-
-        .forecast-location {
-            text-align: center;
-            color: #cddadf;
-            margin-bottom: 20px;
-        }
-
-        .forecast-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-        }
-
-        .forecast-card {
-            background: rgb(218, 177, 177);
-            color: rgb(0, 0, 0);
-            text-align: center;
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        .weather-icon {
-            font-size: 2rem;
-            margin: 10px 0;
-        }
-
-        /* GRID AREA */
-
-        .bottom-grid {
-            display: grid;
-            grid-template-areas: "search tips";
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-        }
-
-        .search-section {
-            grid-area: search;
-        }
-
-        .tips-section {
-            grid-area: tips;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #000000;
-            margin-bottom: 15px;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #000000;
-            color: rgb(255, 255, 255);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #f9faff;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #1dadc0;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* RESPONSIVE DESIGN */
-
-        @media (max-width: 900px) {
-
-            .cities {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .forecast-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .cities {
-                grid-template-columns: 1fr;
-            }
-
-            .forecast-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .bottom-grid {
-                grid-template-areas:
-                    "search"
-                    "tips";
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <script>
-        function searchWeather() {
-            alert("Searching weather for your city...");
-        }
-    </script>
+```
+<header>
+    <h1>🌤 Fiji Weather Dashboard</h1>
+    <p>Real-Time Weather Updates Across Fiji</p>
+</header>
 
-    <header id="home">
-        <h1>🌤 Fiji Weather Dashboard</h1>
-        <p>Real-time weather updates across Fiji</p>
-    </header>
+<main>
 
-    <nav aria-label="Main Navigation">
-        <a href="#home">🏠 Home</a>
-        <a href="#cities">🌍 Cities</a>
-        <a href="#forecast">📅 Forecast</a>
-        <a href="#tips">💡 Tips</a>
-    </nav>
+    <section class="alert-banner">
+        <h2>⚠ Weather Alert</h2>
+        <p>Heavy rainfall expected in some areas this weekend.</p>
+    </section>
 
-    <main>
+    <section class="current-weather">
+        <h2>🌍 Current Conditions</h2>
 
-        <section class="alert-banner">
-            ⚠ Weather Alert: Heavy rain expected in some areas this weekend.
-        </section>
+        <div class="weather-grid">
 
-        <section class="welcome">
-            <h2>Welcome to Fiji Weather</h2>
-            <p>
-                Stay updated with weather conditions, forecasts,
-                and alerts across Fiji's major cities.
-            </p>
-        </section>
+            <article class="weather-card">
+                <h3>☀ Suva</h3>
+                <p>28°C</p>
+                <p>Sunny</p>
+            </article>
 
-        <section class="cities-section" id="cities">
+            <article class="weather-card">
+                <h3>☀ Nadi</h3>
+                <p>31°C</p>
+                <p>Sunny</p>
+            </article>
 
-            <h2>🌍 Major Fiji Cities</h2>
+            <article class="weather-card">
+                <h3>🌧 Labasa</h3>
+                <p>26°C</p>
+                <p>Rainy</p>
+            </article>
 
-            <div class="cities">
+            <article class="weather-card">
+                <h3>⛅ Lautoka</h3>
+                <p>29°C</p>
+                <p>Partly Cloudy</p>
+            </article>
 
-                <article class="city-card">
-                    <h3>☀ Suva</h3>
-                    <p class="temp">28°C</p>
-                    <p>Sunny</p>
-                </article>
+        </div>
+    </section>
 
-                <article class="city-card">
-                    <h3>☀ Nadi</h3>
-                    <p class="temp">31°C</p>
-                    <p>Sunny</p>
-                </article>
+    <section class="forecast-section">
+        <h2>📅 5-Day Forecast (Nadi)</h2>
 
-                <article class="city-card">
-                    <h3>⛅ Tavua</h3>
-                    <p class="temp">29°C</p>
-                    <p>Partly Cloudy</p>
-                </article>
+        <div class="forecast-grid">
 
-                <article class="city-card">
-                    <h3>🌧 Labasa</h3>
-                    <p class="temp">26°C</p>
-                    <p>Rainy</p>
-                </article>
+            <article class="forecast-card">
+                <h3>Mon</h3>
+                <p>☀️</p>
+                <p>30°C</p>
+            </article>
 
-            </div>
+            <article class="forecast-card">
+                <h3>Tue</h3>
+                <p>⛅</p>
+                <p>29°C</p>
+            </article>
 
-        </section>
+            <article class="forecast-card">
+                <h3>Wed</h3>
+                <p>🌧️</p>
+                <p>26°C</p>
+            </article>
 
-        <section class="forecast-section" id="forecast">
+            <article class="forecast-card">
+                <h3>Thu</h3>
+                <p>☀️</p>
+                <p>31°C</p>
+            </article>
 
-            <h2>📅 Fiji 5-Day Forecast</h2>
+            <article class="forecast-card">
+                <h3>Fri</h3>
+                <p>⛅</p>
+                <p>28°C</p>
+            </article>
 
-            <p class="forecast-location">
-                Forecast Location: Nadi, Fiji
-            </p>
+        </div>
+    </section>
 
-            <div class="forecast-grid">
+    <section class="regions-section">
+        <h2>🗺 Fiji Weather Regions</h2>
 
-                <article class="forecast-card">
-                    <h3>Mon</h3>
-                    <p class="weather-icon">☀️</p>
-                    <p>30°C</p>
-                    <small>Sunny</small>
-                </article>
+        <div class="regions-grid">
 
-                <article class="forecast-card">
-                    <h3>Tue</h3>
-                    <p class="weather-icon">⛅</p>
-                    <p>29°C</p>
-                    <small>Partly Cloudy</small>
-                </article>
+            <article class="region-card">
+                <h3>Central Division</h3>
+                <p>Warm and Sunny</p>
+            </article>
 
-                <article class="forecast-card">
-                    <h3>Wed</h3>
-                    <p class="weather-icon">🌧️</p>
-                    <p>26°C</p>
-                    <small>Rain Showers</small>
-                </article>
+            <article class="region-card">
+                <h3>Western Division</h3>
+                <p>Hot and Dry</p>
+            </article>
 
-                <article class="forecast-card">
-                    <h3>Thu</h3>
-                    <p class="weather-icon">☀️</p>
-                    <p>31°C</p>
-                    <small>Sunny</small>
-                </article>
+            <article class="region-card">
+                <h3>Northern Division</h3>
+                <p>Cloudy with Showers</p>
+            </article>
 
-                <article class="forecast-card">
-                    <h3>Fri</h3>
-                    <p class="weather-icon">⛅</p>
-                    <p>28°C</p>
-                    <small>Partly Cloudy</small>
-                </article>
+            <article class="region-card">
+                <h3>Eastern Division</h3>
+                <p>Moderate Rainfall</p>
+            </article>
 
-            </div>
+        </div>
+    </section>
 
-        </section>
+    <section class="statistics-section">
+        <h2>📊 Weather Statistics</h2>
 
-        <section class="summary-section">
+        <div class="stats-grid">
 
-            <h2>📊 Today's Weather Summary</h2>
+            <article class="stat-card">
+                <h3>🌡 Temperature</h3>
+                <p>29°C</p>
+            </article>
 
-            <ul>
-                <li>🌡 Average Temperature: 29°C</li>
-                <li>💧 Humidity: 72%</li>
-                <li>🌬 Wind Speed: 12 km/h</li>
-                <li>☀ Condition: Mostly Sunny</li>
-            </ul>
+            <article class="stat-card">
+                <h3>💧 Humidity</h3>
+                <p>72%</p>
+            </article>
 
-        </section>
+            <article class="stat-card">
+                <h3>🌬 Wind Speed</h3>
+                <p>12 km/h</p>
+            </article>
 
-        <section class="bottom-grid">
+            <article class="stat-card">
+                <h3>☀ UV Index</h3>
+                <p>High</p>
+            </article>
 
-            <section class="search-section">
+        </div>
+    </section>
 
-                <h2>🔍 Search Weather</h2>
+</main>
 
-                <label for="city">City Name</label>
-
-                <input
-                    type="text"
-                    id="city"
-                    placeholder="Enter city name"
-                    aria-label="Enter city name">
-
-                <button
-                    onclick="searchWeather()"
-                    aria-label="Search Weather">
-                    Search Weather
-                </button>
-
-            </section>
-
-            <aside class="tips-section" id="tips">
-
-                <h2>💡 Weather Tips</h2>
-
-                <ul>
-                    <li>Carry an umbrella.</li>
-                    <li>Stay hydrated.</li>
-                    <li>Use sunscreen.</li>
-                    <li>Check forecasts daily.</li>
-                    <li>Avoid flooded roads.</li>
-                </ul>
-
-            </aside>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Fiji Weather Dashboard</p>
-        <p>Created by Simran</p>
-    </footer>
+<footer>
+    <p>© 2026 Fiji Weather Dashboard</p>
+    <p>Created by Simran</p>
+</footer>
+```
 
 </body>
 
