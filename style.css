@@ -1,15 +1,14 @@
-/* Reset some default browser styles */
+/* General reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* General body styling */
+/* Body styling */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #f0f4f8;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
   color: #333;
   padding: 20px;
 }
@@ -20,6 +19,7 @@ header {
   color: #fff;
   padding: 20px;
   text-align: center;
+  border-radius: 8px;
 }
 
 /* Navigation */
@@ -28,6 +28,8 @@ nav {
   justify-content: center;
   background: #023e8a;
   padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
 }
 
 nav a {
@@ -41,7 +43,18 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Main content layout */
+/* Weather Alert Banner */
+.alert {
+  background: #d00000;
+  color: #fff;
+  padding: 15px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* Main layout */
 main {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -62,29 +75,18 @@ section h2 {
   color: #0077b6;
 }
 
-/* Inputs and buttons */
-input[type="text"] {
+/* Articles inside sections */
+article {
+  margin-bottom: 15px;
   padding: 10px;
-  width: 70%;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border-bottom: 1px solid #eee;
 }
 
-button {
-  padding: 10px 15px;
-  background: #0077b6;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+article:last-child {
+  border-bottom: none;
 }
 
-button:hover {
-  background: #023e8a;
-}
-
-/* Aside (tips) */
+/* Aside (tips or stats) */
 aside {
   background: #fff3cd;
   padding: 20px;
@@ -105,4 +107,33 @@ footer {
   background: #0077b6;
   color: #fff;
   border-radius: 8px;
+}
+
+/* Forecast grid */
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.forecast div {
+  background: #e0f7fa;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Weather stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.stats div {
+  background: #edf2fb;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
 }
