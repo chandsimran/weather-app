@@ -1,182 +1,162 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
-    color: #1e293b;
-}
+<html lang="eng">
 
-/* Header */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiji Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-header {
-    background: linear-gradient(135deg, #3794b0, #758288);
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-}
+<body>
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
+```
+<header>
+    <h1>🌤 Fiji Weather Dashboard</h1>
+    <p>Real-Time Weather Updates Across Fiji</p>
+</header> 
+<main>
 
-header p {
-    font-size: 1.1rem;
-}
+    <section class="alert-banner">
+        <h2>⚠ Weather Alert</h2>
+        <p>Heavy rainfall expected in some areas this weekend.</p>
+    </section>
 
-/* Main */
+    <section class="current-weather">
+        <h2>🌍 Current Conditions</h2>
 
-main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 25px;
-}
+        <div class="weather-grid">
 
-/* Sections */
+            <article class="weather-card">
+                <h3>☀ Suva</h3>
+                <p>28°C</p>
+                <p>Sunny</p>
+            </article>
 
-section {
-    margin-bottom: 25px;
-}
+            <article class="weather-card">
+                <h3>☀ Nadi</h3>
+                <p>31°C</p>
+                <p>Sunny</p>
+            </article>
 
-/* Alert */
+            <article class="weather-card">
+                <h3>🌧 Labasa</h3>
+                <p>26°C</p>
+                <p>Rainy</p>
+            </article>
 
-.alert-banner {
-    background: #ef4444;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    border-radius: 12px;
-}
+            <article class="weather-card">
+                <h3>⛅ Lautoka</h3>
+                <p>29°C</p>
+                <p>Partly Cloudy</p>
+            </article>
 
-/* Titles */
+        </div>
+    </section>
 
-h2 {
-    margin-bottom: 15px;
-    color: #1e3a8a;
-}
+    <section class="forecast-section">
+        <h2>📅 5-Day Forecast (Nadi)</h2>
 
-/* Weather Cards */
+        <div class="forecast-grid">
 
-.weather-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
+            <article class="forecast-card">
+                <h3>Mon</h3>
+                <p>☀️</p>
+                <p>30°C</p>
+            </article>
 
-.weather-card {
-    background: white;
-    padding: 25px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+            <article class="forecast-card">
+                <h3>Tue</h3>
+                <p>⛅</p>
+                <p>29°C</p>
+            </article>
 
-.weather-card h3 {
-    margin-bottom: 10px;
-}
+            <article class="forecast-card">
+                <h3>Wed</h3>
+                <p>🌧️</p>
+                <p>26°C</p>
+            </article>
 
-.weather-card p:first-of-type {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2563eb;
-}
+            <article class="forecast-card">
+                <h3>Thu</h3>
+                <p>☀️</p>
+                <p>31°C</p>
+            </article>
 
-/* Forecast */
+            <article class="forecast-card">
+                <h3>Fri</h3>
+                <p>⛅</p>
+                <p>28°C</p>
+            </article>
 
-.forecast-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-}
+        </div>
+    </section>
 
-.forecast-card {
-    background: #2563eb;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-}
+    <section class="regions-section">
+        <h2>🗺 Fiji Weather Regions</h2>
 
-/* Regions */
+        <div class="regions-grid">
 
-.regions-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
+            <article class="region-card">
+                <h3>Central Division</h3>
+                <p>Warm and Sunny</p>
+            </article>
 
-.region-card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+            <article class="region-card">
+                <h3>Western Division</h3>
+                <p>Hot and Dry</p>
+            </article>
 
-/* Statistics */
+            <article class="region-card">
+                <h3>Northern Division</h3>
+                <p>Cloudy with Showers</p>
+            </article>
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
+            <article class="region-card">
+                <h3>Eastern Division</h3>
+                <p>Moderate Rainfall</p>
+            </article>
 
-.stat-card {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+        </div>
+    </section>
 
-.stat-card p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #2563eb;
-    margin-top: 10px;
-}
+    <section class="statistics-section">
+        <h2>📊 Weather Statistics</h2>
 
-/* Footer */
+        <div class="stats-grid">
 
-footer {
-    background: #5478dd;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
+            <article class="stat-card">
+                <h3>🌡 Temperature</h3>
+                <p>29°C</p>
+            </article>
 
-/* Responsive */
+            <article class="stat-card">
+                <h3>💧 Humidity</h3>
+                <p>72%</p>
+            </article>
 
-@media (max-width: 900px) {
+            <article class="stat-card">
+                <h3>🌬 Wind Speed</h3>
+                <p>12 km/h</p>
+            </article>
 
-    .weather-grid,
-    .regions-grid,
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+            <article class="stat-card">
+                <h3>☀ UV Index</h3>
+                <p>High</p>
+            </article>
 
-    .forecast-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+        </div>
+    </section>
 
-@media (max-width: 600px) {
+</main>
 
-    .weather-grid,
-    .regions-grid,
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
+<footer>
+    <p>© 2026 Fiji Weather Dashboard</p>
+    <p>Created by Simran</p>
+</footer>
+```
 
-    .forecast-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+</body>
 
-    header h1 {
-        font-size: 2rem;
-    }
-}
+</html>
