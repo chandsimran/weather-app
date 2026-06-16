@@ -1,7 +1,6 @@
 /* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Body */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #eef2f7;
@@ -20,6 +19,7 @@ header {
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+header p { font-size: 1rem; margin-top: 8px; }
 
 /* Navigation */
 nav {
@@ -75,11 +75,17 @@ section h2 {
   padding-bottom: 8px;
 }
 
+/* Current Conditions Grid */
+.conditions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
 /* Weather Cards */
 article {
   border-radius: 8px;
   padding: 15px;
-  margin-bottom: 15px;
   text-align: center;
   font-weight: 500;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -159,4 +165,5 @@ footer {
   nav { flex-direction: column; }
   nav a { margin: 8px 0; }
   .forecast { grid-template-columns: repeat(2, 1fr); }
+  .conditions { grid-template-columns: 1fr; }
 }
