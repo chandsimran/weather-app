@@ -1,89 +1,122 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiji Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Fiji Weather Dashboard</h1>
-        <p>Real-Time Weather Updates Across Fiji</p>
-    </header>
+```
+<header>
+    <h1>🌤️ Fiji Weather Dashboard</h1>
+    <p>Real-Time Weather Updates Across Fiji</p>
+</header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Weather</a>
-        <a href="#">Regions</a>
-        <a href="#">About</a>
-    </nav>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Weather</a>
+    <a href="#">Regions</a>
+    <a href="#">About</a>
+</nav>
 
-    <div class="alert">
-        ⚠️ Weather Alert: Heavy rainfall expected in some areas this weekend!
-    </div>
+<section class="alert">
+    ⚠️ Weather Alert: Heavy rainfall expected in some areas this weekend!
+</section>
 
-    <main>
-        <!-- Current Conditions -->
-        <section>
-            <h2>Current Conditions</h2>
-            <div class="conditions">
-                <article class="sunny">
-                    <h3>☀️ Suva</h3>
-                    <p>28°C — Sunny</p>
-                </article>
-                <article class="sunny">
-                    <h3>☀️ Nadi</h3>
-                    <p>31°C — Sunny</p>
-                </article>
-                <article class="rainy">
-                    <h3>🌧️ Labasa</h3>
-                    <p>26°C — Rainy</p>
-                </article>
-                <article class="cloudy">
-                    <h3>☁️ Lautoka</h3>
-                    <p>29°C — Partly Cloudy</p>
-                </article>
-            </div>
-        </section>
+<main>
 
-        <!-- 5-Day Forecast -->
-        <section>
-            <h2>5-Day Forecast (Nadi)</h2>
-            <div class="forecast">
-                <div>☀️ Mon: 30°C Sunny</div>
-                <div>☁️ Tue: 29°C Cloudy</div>
-                <div>🌧️ Wed: 26°C Rainy</div>
-                <div>🌤️ Thu: 31°C Partly Cloudy</div>
-                <div>☁️ Fri: 28°C Cloudy</div>
-            </div>
-        </section>
+    <section>
+        <h2>Current Conditions</h2>
 
-        <!-- Regions -->
-        <section>
-            <h2>Fiji Weather Regions</h2>
-            <ul>
-                <li>Central Division: ☀️ Warm and Sunny</li>
-                <li>Western Division: 🔥 Hot and Dry</li>
-                <li>Northern Division: 🌧️ Cloudy with Showers</li>
-                <li>Eastern Division: 🌦️ Moderate Rainfall</li>
-            </ul>
-        </section>
+        <div class="conditions">
 
-        <!-- Stats -->
-        <aside>
-            <h2>Weather Statistics</h2>
-            <div class="stats">
-                <div>🌡️ Temperature: 29°C</div>
-                <div>💧 Humidity: 72%</div>
-                <div>🌬️ Wind Speed: 12 km/h</div>
-                <div>☀️ UV Index: High</div>
-            </div>
-        </aside>
-    </main>
+            <article class="weather-card sunny">
+                <h3>☀️ Suva</h3>
+                <p>28°C — Sunny</p>
+            </article>
 
-    <footer>
-        <p>© 2026 Fiji Weather Dashboard — Created by Simran</p>
-    </footer>
+            <article class="weather-card sunny">
+                <h3>☀️ Nadi</h3>
+                <p>31°C — Sunny</p>
+            </article>
+
+            <article class="weather-card rainy">
+                <h3>🌧️ Labasa</h3>
+                <p>26°C — Rainy</p>
+            </article>
+
+            <article class="weather-card cloudy">
+                <h3>☁️ Lautoka</h3>
+                <p>29°C — Partly Cloudy</p>
+            </article>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>5-Day Forecast (Nadi)</h2>
+
+        <div class="forecast">
+
+            <article class="forecast-card">
+                <h3>Mon</h3>
+                <p>☀️ 30°C</p>
+            </article>
+
+            <article class="forecast-card">
+                <h3>Tue</h3>
+                <p>☁️ 29°C</p>
+            </article>
+
+            <article class="forecast-card">
+                <h3>Wed</h3>
+                <p>🌧️ 26°C</p>
+            </article>
+
+            <article class="forecast-card">
+                <h3>Thu</h3>
+                <p>🌤️ 31°C</p>
+            </article>
+
+            <article class="forecast-card">
+                <h3>Fri</h3>
+                <p>☁️ 28°C</p>
+            </article>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Fiji Weather Regions</h2>
+
+        <ul>
+            <li>Central Division — ☀️ Warm and Sunny</li>
+            <li>Western Division — 🔥 Hot and Dry</li>
+            <li>Northern Division — 🌧️ Cloudy with Showers</li>
+            <li>Eastern Division — 🌦️ Moderate Rainfall</li>
+        </ul>
+    </section>
+
+    <aside>
+        <h2>Weather Statistics</h2>
+
+        <div class="stats">
+            <div>🌡️ Temperature: 29°C</div>
+            <div>💧 Humidity: 72%</div>
+            <div>🌬️ Wind Speed: 12 km/h</div>
+            <div>☀️ UV Index: High</div>
+        </div>
+    </aside>
+
+</main>
+
+<footer>
+    <p>© 2026 Fiji Weather Dashboard | Created by Simran</p>
+</footer>
+```
 
 </body>
 </html>
