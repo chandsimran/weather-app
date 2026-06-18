@@ -1,122 +1,50 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiji Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiji Weather App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-```
-<header>
-    <h1>🌤️ Fiji Weather Dashboard</h1>
-    <p>Real-Time Weather Updates Across Fiji</p>
-</header>
+  <header>
+    <h1>🌤 Fiji Weather App</h1>
+    <p>Search any city to get live weather updates</p>
+  </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">Weather</a>
-    <a href="#">Regions</a>
-    <a href="#">About</a>
-</nav>
+  <main>
 
-<section class="alert">
-    ⚠️ Weather Alert: Heavy rainfall expected in some areas this weekend!
-</section>
-
-<main>
-
-    <section>
-        <h2>Current Conditions</h2>
-
-        <div class="conditions">
-
-            <article class="weather-card sunny">
-                <h3>☀️ Suva</h3>
-                <p>28°C — Sunny</p>
-            </article>
-
-            <article class="weather-card sunny">
-                <h3>☀️ Nadi</h3>
-                <p>31°C — Sunny</p>
-            </article>
-
-            <article class="weather-card rainy">
-                <h3>🌧️ Labasa</h3>
-                <p>26°C — Rainy</p>
-            </article>
-
-            <article class="weather-card cloudy">
-                <h3>☁️ Lautoka</h3>
-                <p>29°C — Partly Cloudy</p>
-            </article>
-
-        </div>
+    <!-- SEARCH -->
+    <section class="search-section">
+      <input id="cityInput" type="text" placeholder="Enter city name">
+      <button id="searchBtn">Search</button>
     </section>
 
-    <section>
-        <h2>5-Day Forecast (Nadi)</h2>
+    <!-- LOADING -->
+    <div class="loading hidden">⏳ Loading...</div>
 
-        <div class="forecast">
+    <!-- ERROR -->
+    <div class="error hidden"></div>
 
-            <article class="forecast-card">
-                <h3>Mon</h3>
-                <p>☀️ 30°C</p>
-            </article>
+    <!-- WEATHER CARD -->
+    <section class="weather-card hidden">
+      <h2 id="cityName">City</h2>
 
-            <article class="forecast-card">
-                <h3>Tue</h3>
-                <p>☁️ 29°C</p>
-            </article>
+      <img id="weatherIcon" src="" alt="weather icon">
 
-            <article class="forecast-card">
-                <h3>Wed</h3>
-                <p>🌧️ 26°C</p>
-            </article>
+      <h3 id="temp">0°C</h3>
 
-            <article class="forecast-card">
-                <h3>Thu</h3>
-                <p>🌤️ 31°C</p>
-            </article>
-
-            <article class="forecast-card">
-                <h3>Fri</h3>
-                <p>☁️ 28°C</p>
-            </article>
-
-        </div>
+      <p id="description">Weather description</p>
     </section>
 
-    <section>
-        <h2>Fiji Weather Regions</h2>
+  </main>
 
-        <ul>
-            <li>Central Division — ☀️ Warm and Sunny</li>
-            <li>Western Division — 🔥 Hot and Dry</li>
-            <li>Northern Division — 🌧️ Cloudy with Showers</li>
-            <li>Eastern Division — 🌦️ Moderate Rainfall</li>
-        </ul>
-    </section>
-
-    <aside>
-        <h2>Weather Statistics</h2>
-
-        <div class="stats">
-            <div>🌡️ Temperature: 29°C</div>
-            <div>💧 Humidity: 72%</div>
-            <div>🌬️ Wind Speed: 12 km/h</div>
-            <div>☀️ UV Index: High</div>
-        </div>
-    </aside>
-
-</main>
-
-<footer>
-    <p>© 2026 Fiji Weather Dashboard | Created by Simran</p>
-</footer>
-```
+  <script src="script.js"></script>
 
 </body>
+
 </html>
+``
