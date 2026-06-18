@@ -24,18 +24,14 @@ window.addEventListener("load", () => {
 // Button click
 searchButton.addEventListener("click", () => {
   const city = searchInput.value.trim();
-  if (city) {
-    getWeather(city);
-  }
+  if (city) getWeather(city);
 });
 
 // Press Enter
 searchInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     const city = searchInput.value.trim();
-    if (city) {
-      getWeather(city);
-    }
+    if (city) getWeather(city);
   }
 });
 
@@ -47,7 +43,7 @@ async function getWeather(city) {
     errorBox.classList.add("hidden");
     weatherCard.classList.add("hidden");
 
-    // API URL (FIXED ✅)
+    // ✅ FIXED URL (removed broken <a> tag)
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
     const response = await fetch(url);
@@ -63,7 +59,7 @@ async function getWeather(city) {
     temperature.textContent = `🌡 ${Math.round(data.main.temp)}°C`;
     description.textContent = data.weather[0].description.toUpperCase();
 
-    // Weather icon
+    // ✅ FIXED ICON URL (removed <a> tag)
     weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
     // Show card
