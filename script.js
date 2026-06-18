@@ -7,36 +7,36 @@ const card = document.querySelector(".weather-card");
 const loading = document.querySelector(".loading");
 const error = document.querySelector(".error");
 
-const cityName = document.getElementById("cityName");
+const city = document.getElementById("cityName");
 const temp = document.getElementById("temp");
 const desc = document.getElementById("description");
 const icon = document.getElementById("weatherIcon");
 const humidity = document.getElementById("humidity");
 
-// SEARCH
-button.addEventListener("click", getWeather);
+button.addEventListener("click", fetchWeather);
 input.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") getWeather();
+  if (e.key === "Enter") fetchWeather();
 });
 
-async function getWeather() {
-  const city = input.value.trim();
-  if (!city) return;
+async function fetchWeather() {
+
+  const cityValue = input.value.trim();
+  if (!cityValue) return;
 
   try {
     loading.classList.remove("hidden");
-    error.classList.add("hidden");
     card.classList.add("hidden");
+    error.classList.add("hidden");
 
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${API_KEY}&units=metric`
     );
 
     const data = await res.json();
 
     if (data.cod !== 200) throw new Error("City not found");
 
-    cityName.textContent = `📍 ${data.name}`;
+    city.textContent = `📍 ${data.name}`;
     temp.textContent = `${Math.round(data.main.temp)}°C`;
     desc.textContent = data.weather[0].description;
 
@@ -49,6 +49,7 @@ async function getWeather() {
   } catch (err) {
     error.textContent = err.message;
     error.classList.remove("hidden");
+
   } finally {
     loading.classList.add("hidden");
   }

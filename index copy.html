@@ -4,46 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fiji Weather App</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header>
-    <h1>🌤 Fiji Weather Dashboard</h1>
-    <p>Real-Time Weather Updates Across Fiji</p>
+    <h1>🌤 Fiji Weather App</h1>
+    <p>Real-time weather updates</p>
   </header>
 
-  <!-- MAIN -->
   <main>
 
     <!-- SEARCH -->
-    <div class="search-box">
-      <input id="cityInput" type="text" placeholder="Enter city name"/>
+    <section class="search" aria-label="Search weather">
+      <input id="cityInput" type="text" placeholder="Enter city" aria-label="City name">
       <button id="searchBtn">Search</button>
-    </div>
+    </section>
 
     <!-- LOADING -->
-    <div class="loading hidden">⏳ Loading...</div>
+    <section class="loading hidden" aria-live="polite">
+      ⏳ Loading weather...
+    </section>
 
     <!-- ERROR -->
-    <div class="error hidden"></div>
+    <section class="error hidden" role="alert"></section>
 
-    <!-- WEATHER CARD -->
-    <div class="weather-card hidden">
-      <h2 id="cityName">City</h2>
+    <!-- WEATHER RESULT -->
+    <section class="weather-card hidden" aria-label="Weather result">
 
-     
+      <article>
+        <h2 id="cityName">City</h2>
 
-      <h3 id="temp">0°C</h3>
+        <img id="weatherIcon" src="" alt="Weather icon">
 
-      <p id="description">Weather</p>
+        <p id="temp">0°C</p>
 
-      <p id="humidity">💧 --%</p>
-    </div>
+        <p id="description">Weather description</p>
+
+        <p id="humidity">💧 --%</p>
+      </article>
+
+    </section>
 
   </main>
+
+  <footer>
+    <p>© 2026 Fiji Weather App</p>
+  </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
