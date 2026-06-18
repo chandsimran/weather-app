@@ -12,16 +12,22 @@ body {
   align-items: center;
   min-height: 100vh;
   color: white;
+  padding: 20px;
 }
 
 /* HEADER */
 header {
   text-align: center;
-  margin: 40px 0;
+  margin: 40px 0 20px;
 }
 
 header h1 {
   font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  opacity: 0.9;
 }
 
 /* MAIN */
@@ -39,26 +45,50 @@ main {
 
 .search input {
   flex: 1;
-  padding: 12px;
+  padding: 12px 14px;
   border-radius: 10px;
   border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search input:focus {
+  outline: 2px solid #ffffff80;
 }
 
 .search button {
-  padding: 12px;
+  padding: 12px 14px;
   border: none;
   border-radius: 10px;
-  background: #2563eb;
+  background: #1d4ed8;
   color: white;
   cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.search button:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+/* LOADING */
+.loading {
+  text-align: center;
+  margin-bottom: 10px;
+  opacity: 0.9;
 }
 
 /* CARD */
 .weather-card article {
-  background: linear-gradient(135deg, #4facfe, #2a6df4);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.4s ease;
 }
 
 .weather-card img {
@@ -67,7 +97,14 @@ main {
 }
 
 #temp {
-  font-size: 32px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#description {
+  opacity: 0.9;
+  margin-bottom: 10px;
 }
 
 .hidden {
@@ -76,15 +113,45 @@ main {
 
 /* ERROR */
 .error {
-  background: red;
-  padding: 10px;
-  border-radius: 8px;
+  background: rgba(255, 0, 0, 0.8);
+  padding: 12px;
+  border-radius: 10px;
   text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* MOBILE */
 @media (max-width: 480px) {
   header h1 {
     font-size: 1.8rem;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search button {
+    width: 100%;
   }
 }

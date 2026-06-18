@@ -14,43 +14,59 @@ const icon = document.getElementById("weatherIcon");
 const humidity = document.getElementById("humidity");
 
 button.addEventListener("click", fetchWeather);
-input.addEventListener("keypress", (e) => {
+input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") fetchWeather();
 });
 
 async function fetchWeather() {
-
   const cityValue = input.value.trim();
-  if (!cityValue) return;
+
+  if (!cityValue) {
+    showError("Please enter a city name");
+    return;
+  }
 
   try {
+    // UI states
     loading.classList.remove("hidden");
     card.classList.add("hidden");
     error.classList.add("hidden");
 
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+        cityValue
+      )}&appid=${API_KEY}&units=metric`
     );
 
     const data = await res.json();
 
-    if (data.cod !== 200) throw new Error("City not found");
+    // FIX: proper API error handling
+    if (!res.ok) {
+      throw new Error(data.message || "City not found");
+    }
 
+    // Update UI
     city.textContent = `📍 ${data.name}`;
     temp.textContent = `${Math.round(data.main.temp)}°C`;
     desc.textContent = data.weather[0].description;
 
     icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    icon.alt = data.weather[0].description;
 
     humidity.textContent = `💧 ${data.main.humidity}%`;
 
     card.classList.remove("hidden");
 
   } catch (err) {
-    error.textContent = err.message;
-    error.classList.remove("hidden");
-
+    showError(err.message);
   } finally {
     loading.classList.add("hidden");
   }
+}
+
+// helper function (cleaner code)
+function showError(message) {
+  error.textContent = message;
+  error.classList.remove("hidden");
+  card.classList.add("hidden");
 }
