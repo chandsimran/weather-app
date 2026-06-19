@@ -1,72 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fiji Weather App</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>🌤 Fiji Weather App</h1>
-    <p>Real-time weather updates</p>
-  </header>
+    <header>
+        <h1>🌦 Weather App</h1>
+        <p>Type a city to get current weather</p>
+    </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
+    <main class="container">
 
-    <!-- SEARCH SECTION -->
-    <section class="search" aria-label="Weather search">
-      <label for="cityInput" class="sr-only">Enter city</label>
+        <section class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name...">
+            <button id="searchBtn">Search</button>
+        </section>
 
-      <input
-        id="cityInput"
-        type="text"
-        placeholder="Enter city"
-        aria-label="City name"
-      />
+        <section class="card weather-card hidden">
 
-      <button id="searchBtn" type="button">
-        Search
-      </button>
-    </section>
+            <h2 id="cityName"></h2>
 
-    <!-- LOADING STATE -->
-    <section class="loading hidden" aria-live="polite">
-      ⏳ Loading weather...
-    </section>
+            <div class="weather-info">
+                <img id="weatherIcon" alt="Weather Icon">
+                <h3 id="temperature"></h3>
+            </div>
 
-    <!-- ERROR MESSAGE -->
-    <section class="error hidden" role="alert" aria-live="assertive"></section>
+            <p id="description"></p>
 
-    <!-- WEATHER RESULT -->
-    <section class="weather-card hidden" aria-label="Weather result">
+        </section>
 
-      <article>
-        <h2 id="cityName">City</h2>
+        <section class="loading hidden">
+            <p>Loading weather...</p>
+        </section>
 
-        <figure>
-          <img id="weatherIcon" src="" alt="Weather icon representing current conditions" />
-        </figure>
+        <section class="error hidden">
+            <p>City not found. Please try again.</p>
+        </section>
 
-        <p id="temp">0°C</p>
-        <p id="description">Weather description</p>
-        <p id="humidity">💧 --%</p>
-      </article>
+    </main>
 
-    </section>
+    <footer>
+        <p>Built with HTML, CSS & JavaScript</p>
+    </footer>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Fiji Weather App</p>
-  </footer>
-
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
+
 </html>

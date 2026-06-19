@@ -1,198 +1,113 @@
+/* RESET */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* BODY */
 body {
-  min-height: 100vh;
-  color: white;
-
-  /* modern gradient background */
-  background: linear-gradient(135deg, #1e90ff, #00c6ff, #0072ff);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 20px;
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* HEADER */
 header {
-  text-align: center;
-  margin: 20px 0 30px;
+    text-align: center;
+    margin-top: 40px;
 }
 
 header h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
+    font-size: 32px;
 }
 
-header p {
-  opacity: 0.85;
-  margin-top: 5px;
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
+    padding: 20px;
 }
 
-/* MAIN CONTAINER */
-main {
-  width: 100%;
-  max-width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* SEARCH */
+.search-box {
+    display: flex;
+    gap: 10px;
 }
 
-/* SEARCH BOX */
-.search {
-  display: flex;
-  gap: 10px;
+input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
 }
 
-.search input {
-  flex: 1;
-  padding: 12px 14px;
-  border: none;
-  border-radius: 12px;
-
-  outline: none;
-  font-size: 1rem;
-
-  background: rgba(255, 255, 255, 0.9);
-  color: #111;
+button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #111827;
+    color: white;
+    cursor: pointer;
 }
 
-.search input:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.6);
+button:hover {
+    background: #000;
 }
 
-.search button {
-  padding: 12px 16px;
-  border: none;
-  border-radius: 12px;
-
-  background: #0b5ed7;
-  color: white;
-
-  font-weight: bold;
-  cursor: pointer;
-
-  transition: 0.2s ease;
+/* CARD */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    text-align: center;
 }
 
-.search button:hover {
-  transform: translateY(-2px);
-  background: #094db3;
+.weather-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
 }
 
-/* LOADING */
-.loading {
-  text-align: center;
-  font-size: 0.95rem;
-  opacity: 0.9;
+.weather-info img {
+    width: 60px;
 }
 
-/* ERROR */
-.error {
-  background: rgba(255, 0, 0, 0.25);
-  border: 1px solid rgba(255, 0, 0, 0.5);
-  padding: 12px;
-  border-radius: 12px;
-
-  text-align: center;
-  font-weight: 600;
-}
-
-/* WEATHER CARD (MAIN UI) */
-.weather-card article {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  border-radius: 20px;
-  padding: 25px;
-
-  text-align: center;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-
-  animation: fadeIn 0.4s ease;
-}
-
-/* CITY NAME */
-#cityName {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-/* ICON */
-.weather-card img {
-  width: 90px;
-  height: 90px;
-}
-
-/* TEMP */
-#temp {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-/* DESCRIPTION */
-#description {
-  text-transform: capitalize;
-  opacity: 0.9;
-  margin-bottom: 10px;
-}
-
-/* HUMIDITY */
-#humidity {
-  opacity: 0.9;
-  font-size: 1rem;
-}
-
-/* HIDDEN UTILITY */
+/* STATES */
 .hidden {
-  display: none;
+    display: none;
+}
+
+/* LOADING + ERROR */
+.loading, .error {
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* FOOTER */
 footer {
-  margin-top: auto;
-  padding: 20px;
-  font-size: 0.85rem;
-  opacity: 0.8;
-  text-align: center;
+    margin-top: auto;
+    padding: 20px;
+    font-size: 14px;
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 24px;
+    }
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  main {
-    max-width: 100%;
-  }
-
-  .search {
-    flex-direction: column;
-  }
-
-  .search button {
-    width: 100%;
-  }
+    .search-box {
+        flex-direction: column;
+    }
 }

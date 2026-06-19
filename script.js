@@ -1,72 +1,51 @@
-const API_KEY = "9256af08e32f21a7199c1436f67f3b34";
+const API_KEY = "9256af08e32f21a7199c1436f67f3b34"
 
 const input = document.getElementById("cityInput");
 const button = document.getElementById("searchBtn");
 
-const card = document.querySelector(".weather-card");
+const weatherCard = document.querySelector(".weather-card");
 const loading = document.querySelector(".loading");
-const error = document.querySelector(".error");
+const errorBox = document.querySelector(".error");
 
-const city = document.getElementById("cityName");
-const temp = document.getElementById("temp");
-const desc = document.getElementById("description");
+const cityName = document.getElementById("cityName");
+const temperature = document.getElementById("temperature");
+const description = document.getElementById("description");
 const icon = document.getElementById("weatherIcon");
-const humidity = document.getElementById("humidity");
 
-button.addEventListener("click", fetchWeather);
-input.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") fetchWeather();
-});
+button.addEventListener("click", getWeather);
 
-async function fetchWeather() {
-  const cityValue = input.value.trim();
+async function getWeather() {
+    const city = input.value.trim();
 
-  if (!cityValue) {
-    showError("Please enter a city name");
-    return;
-  }
+    if (!city) return;
 
-  try {
-    // UI states
+    // Reset UI
+    weatherCard.classList.add("hidden");
+    errorBox.classList.add("hidden");
     loading.classList.remove("hidden");
-    card.classList.add("hidden");
-    error.classList.add("hidden");
 
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
-        cityValue
-      )}&appid=${API_KEY}&units=metric`
-    );
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+        const res = await fetch(url);
 
-    const data = await res.json();
+        if (!res.ok) {
+            throw new Error("City not found");
+        }
 
-    // FIX: proper API error handling
-    if (!res.ok) {
-      throw new Error(data.message || "City not found");
+        const data = await res.json();
+
+        // Update UI
+        cityName.textContent = data.name;
+        temperature.textContent = `${Math.round(data.main.temp)}°C`;
+        description.textContent = data.weather[0].description;
+
+        icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+        weatherCard.classList.remove("hidden");
+
+    } catch (error) {
+        errorBox.classList.remove("hidden");
+    } finally {
+        loading.classList.add("hidden");
     }
-
-    // Update UI
-    city.textContent = `📍 ${data.name}`;
-    temp.textContent = `${Math.round(data.main.temp)}°C`;
-    desc.textContent = data.weather[0].description;
-
-    icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    icon.alt = data.weather[0].description;
-
-    humidity.textContent = `💧 ${data.main.humidity}%`;
-
-    card.classList.remove("hidden");
-
-  } catch (err) {
-    showError(err.message);
-  } finally {
-    loading.classList.add("hidden");
-  }
-}
-
-// helper function (cleaner code)
-function showError(message) {
-  error.textContent = message;
-  error.classList.remove("hidden");
-  card.classList.add("hidden");
 }
