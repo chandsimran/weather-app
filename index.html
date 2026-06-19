@@ -1,163 +1,318 @@
-<!DOCTYPE html>
 
-<html lang="eng">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Fiji Weather Dashboard</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-```
-<header>
-    <h1>🌤 Fiji Weather Dashboard</h1>
-    <p>Real-Time Weather Updates Across Fiji</p>
-</header> 
+    <!-- ================= HEADER ================= -->
 
-<main>
+    <header>
 
-    <section class="alert-banner">
-        <h2>⚠ Weather Alert</h2>
-        <p>Heavy rainfall expected in some areas this weekend.</p>
-    </section>
+        <div class="logo">
 
-    <section class="current-weather">
-        <h2>🌍 Current Conditions</h2>
+            <h1>🌤 Fiji Weather Dashboard</h1>
 
-        <div class="weather-grid">
-
-            <article class="weather-card">
-                <h3>☀ Suva</h3>
-                <p>28°C</p>
-                <p>Sunny</p>
-            </article>
-
-            <article class="weather-card">
-                <h3>☀ Nadi</h3>
-                <p>31°C</p>
-                <p>Sunny</p>
-            </article>
-
-            <article class="weather-card">
-                <h3>🌧 Labasa</h3>
-                <p>26°C</p>
-                <p>Rainy</p>
-            </article>
-
-            <article class="weather-card">
-                <h3>⛅ Lautoka</h3>
-                <p>29°C</p>
-                <p>Partly Cloudy</p>
-            </article>
+            <p>Real-Time Weather Updates Across Fiji</p>
 
         </div>
-    </section>
 
-    <section class="forecast-section">
-        <h2>📅 5-Day Forecast (Nadi)</h2>
+        <nav>
 
-        <div class="forecast-grid">
+            <a href="#">Home</a>
 
-            <article class="forecast-card">
-                <h3>Mon</h3>
-                <p>☀️</p>
-                <p>30°C</p>
-            </article>
+            <a href="#">Weather</a>
 
-            <article class="forecast-card">
-                <h3>Tue</h3>
-                <p>⛅</p>
-                <p>29°C</p>
-            </article>
+            <a href="#">Safety Tips</a>
 
-            <article class="forecast-card">
-                <h3>Wed</h3>
-                <p>🌧️</p>
-                <p>26°C</p>
-            </article>
+           
 
-            <article class="forecast-card">
-                <h3>Thu</h3>
-                <p>☀️</p>
-                <p>31°C</p>
-            </article>
+        </nav>
 
-            <article class="forecast-card">
-                <h3>Fri</h3>
-                <p>⛅</p>
-                <p>28°C</p>
-            </article>
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>Know the Weather Before You Go</h2>
+
+            <p>
+
+                Search any city to view the latest weather,
+                temperature, humidity, wind speed and visibility.
+
+            </p>
 
         </div>
+
     </section>
 
-    <section class="regions-section">
-        <h2>🗺 Fiji Weather Regions</h2>
+    <!-- ================= MAIN ================= -->
 
-        <div class="regions-grid">
+    <main>
 
-            <article class="region-card">
-                <h3>Central Division</h3>
-                <p>Warm and Sunny</p>
-            </article>
+        <!-- SEARCH -->
 
-            <article class="region-card">
-                <h3>Western Division</h3>
-                <p>Hot and Dry</p>
-            </article>
+        <section class="search-box">
 
-            <article class="region-card">
-                <h3>Northern Division</h3>
-                <p>Cloudy with Showers</p>
-            </article>
+            <h2>Search Weather</h2>
 
-            <article class="region-card">
-                <h3>Eastern Division</h3>
-                <p>Moderate Rainfall</p>
-            </article>
+            <p class="search-text">
 
-        </div>
-    </section>
+                Enter the name of any city below.
 
-    <section class="statistics-section">
-        <h2>📊 Weather Statistics</h2>
+            </p>
 
-        <div class="stats-grid">
+            <div class="search-area">
 
-            <article class="stat-card">
-                <h3>🌡 Temperature</h3>
-                <p>29°C</p>
-            </article>
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Example: Suva">
 
-            <article class="stat-card">
-                <h3>💧 Humidity</h3>
-                <p>72%</p>
-            </article>
+                <button id="searchBtn">
 
-            <article class="stat-card">
-                <h3>🌬 Wind Speed</h3>
-                <p>12 km/h</p>
-            </article>
+                    Search Weather
 
-            <article class="stat-card">
-                <h3>☀ UV Index</h3>
-                <p>High</p>
-            </article>
+                </button>
 
-        </div>
-    </section>
+            </div>
 
-</main>
+        </section>
 
-<footer>
-    <p>© 2026 Fiji Weather Dashboard</p>
-    <p>Created by Simran</p>
-</footer>
-```
+        <!-- LOADING -->
+
+        <section
+            id="loading"
+            class="loading hidden">
+
+            <div class="spinner"></div>
+
+            <p>Loading weather information...</p>
+
+        </section>
+
+        <!-- ERROR -->
+
+        <section
+            id="error"
+            class="error hidden">
+
+            <h3>City Not Found</h3>
+
+            <p>
+
+                Please check the spelling and try again.
+
+            </p>
+
+        </section>
+
+        <!-- WEATHER CARD -->
+
+        <section
+            id="weatherCard"
+            class="weather-card hidden">
+
+            <div class="weather-header">
+
+                <div>
+
+                    <h2 id="cityName">
+
+                        Suva
+
+                    </h2>
+
+                    <p id="description">
+
+                        Clear Sky
+
+                    </p>
+
+                </div>
+
+                <img
+                    id="weatherIcon"
+                    src=""
+                    alt="Weather Icon">
+
+            </div>
+
+            <div class="temperature">
+
+                <h1 id="temperature">
+
+                    28°C
+
+                </h1>
+
+            </div>
+
+            <div class="weather-grid">
+
+                <article>
+
+                    <h3>🌡 Feels Like</h3>
+
+                    <p id="feelsLike">
+
+                        --°C
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>💧 Humidity</h3>
+
+                    <p id="humidity">
+
+                        --%
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>🌬 Wind Speed</h3>
+
+                    <p id="wind">
+
+                        -- km/h
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>👁 Visibility</h3>
+
+                    <p id="visibility">
+
+                        -- km
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- WEATHER TIPS -->
+
+        <section class="tips">
+
+            <h2>Weather Safety Tips</h2>
+
+            <div class="tips-grid">
+
+                <article>
+
+                    <h3>☀ Sunny</h3>
+
+                    <p>
+
+                        Stay hydrated and wear sunscreen when spending time outdoors.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>🌧 Rain</h3>
+
+                    <p>
+
+                        Carry an umbrella and allow extra travel time.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>🌪 Strong Winds</h3>
+
+                    <p>
+
+                        Secure loose outdoor items and avoid unnecessary travel.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>🌊 Flooding</h3>
+
+                    <p>
+
+                        Stay away from flooded roads and follow local safety advice.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        
+        
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            Fiji Weather Dashboard
+
+        </p>
+
+        <p>
+
+            Powered by OpenWeatherMap
+
+        </p>
+
+        <p>
+
+            Created by Simran 
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
+/* 
 
-</html>
+/*
+
+
