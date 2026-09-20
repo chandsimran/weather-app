@@ -16,6 +16,7 @@ const weatherIcon = document.getElementById("weatherIcon");
 const searchForm = document.getElementById("searchForm");
 const forecastSection = document.getElementById("forecastSection");
 const forecastGrid = document.getElementById("forecastGrid");
+const themeToggle = document.getElementById("themeToggle");
 
 searchForm.addEventListener("submit", function(event){
 
@@ -172,5 +173,32 @@ document.addEventListener("DOMContentLoaded", function(){
         getWeather();
 
     }
+
+    // ---- Theme initialisation ----
+    // Default to dark; restore saved preference if it exists.
+    const savedTheme = localStorage.getItem("theme") || "dark";
+
+    if(savedTheme === "light"){
+        document.body.classList.add("light");
+        themeToggle.textContent = "☀️";
+        themeToggle.setAttribute("aria-label", "Switch to dark mode");
+    }
+
+    // ---- Theme toggle handler ----
+    themeToggle.addEventListener("click", function(){
+
+        const isLight = document.body.classList.toggle("light");
+
+        if(isLight){
+            themeToggle.textContent = "☀️";
+            themeToggle.setAttribute("aria-label", "Switch to dark mode");
+            localStorage.setItem("theme", "light");
+        } else {
+            themeToggle.textContent = "🌙";
+            themeToggle.setAttribute("aria-label", "Switch to light mode");
+            localStorage.setItem("theme", "dark");
+        }
+
+    });
 
 });

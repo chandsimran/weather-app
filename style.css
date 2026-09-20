@@ -1,4 +1,4 @@
-﻿/* ===================================================
+/* ===================================================
    FIJI WEATHER DASHBOARD
    Created by Simran
 =================================================== */
@@ -84,6 +84,76 @@
 }
 
 /* ===================================================
+   LIGHT MODE OVERRIDES
+   Applied when <body> has the class 'light'
+=================================================== */
+
+body.light{
+
+    --clr-bg-start:        #e8f4fd;
+    --clr-bg-mid:          #ddeeff;
+    --clr-bg-end:          #cce4f7;
+
+    --clr-header-bg:       rgba(255, 255, 255, 0.88);
+    --clr-header-border:   rgba(0, 0, 0, 0.08);
+
+    --clr-card-bg:         rgba(255, 255, 255, 0.75);
+    --clr-card-border:     rgba(0, 0, 0, 0.10);
+    --clr-card-hover-bg:   rgba(255, 255, 255, 0.92);
+
+    --clr-accent:          #0284c7;
+    --clr-accent-dark:     #0369a1;
+
+    --clr-text-primary:    #0f172a;
+    --clr-text-secondary:  #475569;
+    --clr-text-muted:      #94a3b8;
+
+    --clr-input-bg:        rgba(255, 255, 255, 0.9);
+    --clr-input-border:    rgba(0, 0, 0, 0.15);
+    --clr-input-focus:     #0284c7;
+
+    --clr-btn-bg:          linear-gradient(135deg, #0ea5e9, #0284c7);
+    --clr-btn-text:        #ffffff;
+
+    --clr-weather-card:    linear-gradient(145deg, rgba(14, 165, 233, 0.14), rgba(2, 132, 199, 0.08));
+    --clr-weather-border:  rgba(2, 132, 199, 0.25);
+
+    --clr-stat-bg:         rgba(255, 255, 255, 0.65);
+    --clr-stat-border:     rgba(0, 0, 0, 0.08);
+
+    --clr-forecast-bg:     rgba(255, 255, 255, 0.60);
+    --clr-forecast-border: rgba(0, 0, 0, 0.08);
+    --clr-forecast-hover:  rgba(14, 165, 233, 0.12);
+
+    --clr-tips-bg:         rgba(255, 255, 255, 0.55);
+    --clr-tips-card-bg:    rgba(255, 255, 255, 0.70);
+    --clr-tips-h3:         #0284c7;
+    --clr-tips-border:     rgba(0, 0, 0, 0.08);
+
+    --clr-error-bg:        rgba(239, 68, 68, 0.10);
+    --clr-error-border:    rgba(239, 68, 68, 0.35);
+    --clr-error-text:      #b91c1c;
+
+    --clr-loading-bg:      rgba(255, 255, 255, 0.70);
+    --clr-spinner-track:   rgba(0, 0, 0, 0.08);
+    --clr-spinner-head:    #0284c7;
+
+    --clr-footer-bg:       rgba(255, 255, 255, 0.80);
+    --clr-footer-text:     #64748b;
+
+    --clr-scrollbar-track: #ddeeff;
+    --clr-scrollbar-thumb: #0284c7;
+
+    --clr-nav-link:        #475569;
+    --clr-nav-hover:       #0284c7;
+
+    --shadow-sm:  0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-md:  0 8px 32px rgba(0, 0, 0, 0.12);
+    --shadow-lg:  0 20px 60px rgba(0, 0, 0, 0.15);
+
+}
+
+/* ===================================================
    RESET & BASE
 =================================================== */
 
@@ -106,6 +176,7 @@ body{
     min-height:100vh;
     color:var(--clr-text-primary);
     -webkit-font-smoothing:antialiased;
+    transition:background 0.35s ease, color 0.35s ease;
 }
 
 /* ===================================================
@@ -176,6 +247,41 @@ nav a:hover{
 
 nav a:hover::after{
     width:100%;
+}
+
+/* ===================================================
+   THEME TOGGLE BUTTON
+=================================================== */
+
+.theme-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid var(--clr-card-border);
+    background:var(--clr-card-bg);
+    color:var(--clr-text-primary);
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:background var(--transition), border-color var(--transition), transform var(--transition);
+    flex-shrink:0;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    line-height:1;
+    padding:0;
+}
+
+.theme-toggle:hover{
+    transform:scale(1.1);
+    background:var(--clr-card-hover-bg);
+    border-color:var(--clr-accent);
+}
+
+.theme-toggle:focus-visible{
+    outline:2px solid var(--clr-accent);
+    outline-offset:3px;
 }
 
 /* ===================================================
