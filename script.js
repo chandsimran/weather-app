@@ -42,6 +42,9 @@ async function getWeather(){
     error.classList.add("hidden");
     weatherCard.classList.add("hidden");
 
+    cityInput.disabled = true;
+    searchBtn.disabled = true;
+
     try{
 
         const response = await fetch(
@@ -73,6 +76,8 @@ async function getWeather(){
     finally{
 
         loading.classList.add("hidden");
+        cityInput.disabled = false;
+        searchBtn.disabled = false;
 
     }
 
@@ -95,11 +100,12 @@ function displayWeather(data){
 
     weatherIcon.src =
 `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
+    weatherIcon.alt = data.weather[0].description;
 
     weatherCard.classList.remove("hidden");
 
 }
-window.onload = function(){
+document.addEventListener("DOMContentLoaded", function(){
 
     const lastCity = localStorage.getItem("lastCity");
 
@@ -111,4 +117,4 @@ window.onload = function(){
 
     }
 
-}
+});
