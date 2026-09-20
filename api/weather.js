@@ -32,15 +32,21 @@ module.exports = async function handler(req, res) {
     return sendJson(res, 405, { error: 'Method Not Allowed' });
   }
 
-  // Extract and validate city query parameter
+  // Extract query parameters
   const parsedUrl = new URL(req.url, 'http://localhost');
   const city = parsedUrl.searchParams.get('city') || (req.query && req.query.city);
+  const lat  = parsedUrl.searchParams.get('lat')  || (req.query && req.query.lat);
+  const lon  = parsedUrl.searchParams.get('lon')  || (req.query && req.query.lon);
 
-  if (!city || typeof city !== 'string' || !city.trim()) {
-    return sendJson(res, 400, { error: 'City parameter is required.' });
+  // Require either city OR lat+lon
+  const hasCoords = lat && lon;
+  const hasCity   = city && typeof city === 'string' && city.trim();
+
+  if (!hasCity && !hasCoords) {
+    return sendJson(res, 400, { error: 'Provide a city name or lat/lon coordinates.' });
   }
 
-  if (city.trim().length > 100) {
+  if (hasCity && city.trim().length > 100) {
     return sendJson(res, 400, { error: 'City parameter exceeds maximum length of 100 characters.' });
   }
 
@@ -53,11 +59,14 @@ module.exports = async function handler(req, res) {
   }
 
   const typeParam = parsedUrl.searchParams.get('type') || (req.query && req.query.type);
-  const endpoint = typeParam === 'forecast' ? 'forecast' : 'weather';
+  const endpoint  = typeParam === 'forecast' ? 'forecast' : 'weather';
 
-  const targetUrl = `https://api.openweathermap.org/data/2.5/${endpoint}?q=${encodeURIComponent(
-    city.trim()
-  )}&appid=${apiKey}&units=metric`;
+  // Build URL — coordinates take priority over city name
+  const locationQuery = hasCoords
+    ? `lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}`
+    : `q=${encodeURIComponent(city.trim())}`;
+
+  const targetUrl = `https://api.openweathermap.org/data/2.5/${endpoint}?${locationQuery}&appid=${apiKey}&units=metric`;
 
   try {
     const apiResponse = await new Promise((resolve, reject) => {
