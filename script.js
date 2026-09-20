@@ -1,5 +1,3 @@
-const API_KEY = "9256af08e32f21a7199c1436f67f3b34";
-
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
 
@@ -15,6 +13,7 @@ const wind = document.getElementById("wind");
 const feelsLike = document.getElementById("feelsLike");
 const visibility = document.getElementById("visibility");
 const weatherIcon = document.getElementById("weatherIcon");
+
 searchBtn.addEventListener("click", getWeather);
 
 cityInput.addEventListener("keypress", function(event){
@@ -26,6 +25,7 @@ cityInput.addEventListener("keypress", function(event){
     }
 
 });
+
 async function getWeather(){
 
     const city = cityInput.value.trim();
@@ -46,7 +46,7 @@ async function getWeather(){
 
         const response = await fetch(
 
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        `/api/weather?city=${encodeURIComponent(city)}`
 
         );
 
