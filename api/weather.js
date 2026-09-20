@@ -52,7 +52,10 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  const targetUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+  const typeParam = parsedUrl.searchParams.get('type') || (req.query && req.query.type);
+  const endpoint = typeParam === 'forecast' ? 'forecast' : 'weather';
+
+  const targetUrl = `https://api.openweathermap.org/data/2.5/${endpoint}?q=${encodeURIComponent(
     city.trim()
   )}&appid=${apiKey}&units=metric`;
 

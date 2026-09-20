@@ -14,6 +14,8 @@ const feelsLike = document.getElementById("feelsLike");
 const visibility = document.getElementById("visibility");
 const weatherIcon = document.getElementById("weatherIcon");
 const searchForm = document.getElementById("searchForm");
+const forecastSection = document.getElementById("forecastSection");
+const forecastGrid = document.getElementById("forecastGrid");
 
 searchForm.addEventListener("submit", function(event){
 
@@ -38,27 +40,29 @@ async function getWeather(){
     loading.classList.remove("hidden");
     error.classList.add("hidden");
     weatherCard.classList.add("hidden");
+    forecastSection.classList.add("hidden");
 
     cityInput.disabled = true;
     searchBtn.disabled = true;
 
     try{
 
-        const response = await fetch(
+        const [currentRes, forecastRes] = await Promise.all([
+            fetch(`/api/weather?city=${encodeURIComponent(city)}`),
+            fetch(`/api/weather?city=${encodeURIComponent(city)}&type=forecast`)
+        ]);
 
-        `/api/weather?city=${encodeURIComponent(city)}`
-
-        );
-
-        if(!response.ok){
+        if(!currentRes.ok || !forecastRes.ok){
 
             throw new Error("City not found");
 
         }
 
-        const data = await response.json();
+        const currentData = await currentRes.json();
+        const forecastData = await forecastRes.json();
 
-        displayWeather(data);
+        displayWeather(currentData);
+        displayForecast(forecastData);
 
         localStorage.setItem("lastCity", city);
 
@@ -101,6 +105,61 @@ function displayWeather(data){
 
     weatherCard.classList.remove("hidden");
 
+}
+
+function displayForecast(data) {
+    forecastGrid.innerHTML = "";
+
+    const dailyForecasts = [];
+    const seenDates = new Set();
+
+    for (const item of data.list) {
+        const date = item.dt_txt.split(" ")[0];
+        const time = item.dt_txt.split(" ")[1];
+
+        if (!seenDates.has(date) && time === "12:00:00") {
+            dailyForecasts.push(item);
+            seenDates.add(date);
+        }
+    }
+
+    if (dailyForecasts.length < 5) {
+        for (const item of data.list) {
+            const date = item.dt_txt.split(" ")[0];
+            if (!seenDates.has(date)) {
+                dailyForecasts.push(item);
+                seenDates.add(date);
+            }
+            if (dailyForecasts.length === 5) break;
+        }
+    }
+
+    dailyForecasts.sort((a, b) => new Date(a.dt_txt) - new Date(b.dt_txt));
+    const finalForecasts = dailyForecasts.slice(0, 5);
+
+    for (const item of finalForecasts) {
+        const dateObj = new Date(item.dt_txt);
+        const options = { weekday: 'short', month: 'short', day: 'numeric' };
+        const dateString = dateObj.toLocaleDateString(undefined, options);
+
+        const temp = Math.round(item.main.temp);
+        const desc = item.weather[0].description;
+        const iconSrc = `https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`;
+
+        const card = document.createElement("article");
+        card.className = "forecast-card";
+
+        card.innerHTML = `
+            <div class="date">${dateString}</div>
+            <img src="${iconSrc}" alt="${desc}">
+            <div class="desc">${desc}</div>
+            <div class="temp">${temp}°C</div>
+        `;
+
+        forecastGrid.appendChild(card);
+    }
+
+    forecastSection.classList.remove("hidden");
 }
 document.addEventListener("DOMContentLoaded", function(){
 

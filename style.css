@@ -410,6 +410,123 @@ section{
 }
 
 /* ===================================================
+            FORECAST
+=================================================== */
+
+.forecast-section{
+
+    background:linear-gradient(
+    135deg,
+    #aad0a6,
+    #5becec);
+
+    color:rgb(8, 0, 0);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+    animation:fadeIn .8s ease;
+
+}
+
+.forecast-section h2{
+
+    text-align:center;
+
+    color:rgb(255, 245, 245);
+
+    font-size:2.5rem;
+
+    margin-bottom:30px;
+
+}
+
+.forecast-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:20px;
+
+}
+
+.forecast-card{
+
+    background:rgb(234, 173, 228);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    padding:20px 15px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.forecast-card:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.25);
+
+}
+
+.forecast-card img{
+
+    width:80px;
+
+    height:80px;
+
+}
+
+.forecast-card h3{
+
+    margin:10px 0 5px;
+
+    color:rgb(0, 0, 0);
+
+}
+
+.forecast-card .date{
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+
+}
+
+.forecast-card .desc{
+
+    font-size:0.9rem;
+
+    text-transform:capitalize;
+
+    margin-bottom:10px;
+
+}
+
+.forecast-card .temp{
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+
+}
+
+/* ===================================================
             LOADING
 =================================================== */
 
@@ -684,6 +801,12 @@ header{
 
 }
 
+.forecast-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
 .tips-grid{
 
     grid-template-columns:repeat(2,1fr);
@@ -795,6 +918,12 @@ nav{
 }
 
 .weather-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.forecast-grid{
 
     grid-template-columns:1fr;
 
