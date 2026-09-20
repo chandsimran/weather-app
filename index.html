@@ -77,20 +77,21 @@
 
             </p>
 
-            <div class="search-area">
+            <form id="searchForm" role="search" class="search-area">
 
                 <input
                     type="text"
                     id="cityInput"
-                    placeholder="Example: Suva">
+                    placeholder="Example: Suva"
+                    aria-label="City name">
 
-                <button id="searchBtn">
+                <button type="submit" id="searchBtn">
 
                     Search Weather
 
                 </button>
 
-            </div>
+            </form>
 
         </section>
 
@@ -98,7 +99,8 @@
 
         <section
             id="loading"
-            class="loading hidden">
+            class="loading hidden"
+            role="status">
 
             <div class="spinner"></div>
 
@@ -110,7 +112,8 @@
 
         <section
             id="error"
-            class="error hidden">
+            class="error hidden"
+            role="alert">
 
             <h3>City Not Found</h3>
 

@@ -13,16 +13,13 @@ const wind = document.getElementById("wind");
 const feelsLike = document.getElementById("feelsLike");
 const visibility = document.getElementById("visibility");
 const weatherIcon = document.getElementById("weatherIcon");
+const searchForm = document.getElementById("searchForm");
 
-searchBtn.addEventListener("click", getWeather);
+searchForm.addEventListener("submit", function(event){
 
-cityInput.addEventListener("keypress", function(event){
+    event.preventDefault();
 
-    if(event.key === "Enter"){
-
-        getWeather();
-
-    }
+    getWeather();
 
 });
 
